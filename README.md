@@ -1,15 +1,22 @@
 # NX-Edge
 
 > **High-Density Modular Embedded Development Platform**  
-> *M.2 2280 Key B • 6-Layer High-Density RF/Power Stackup • ESP32-S3 Dual-Core 240MHz • Autonomous LiPo Power-Path & Fuel Gauge • Dual-Antenna RF Front-End • Switched NeoPixel Driver*
+> *M.2 2260 / 2280 Key B • 6-Layer High-Density RF/Power Stackup • ESP32-S3 Dual-Core 240MHz • Autonomous LiPo Power-Path & Fuel Gauge • Dual-Antenna RF Front-End • 9-DOF IMU • I2S Audio Amp • 4-bit MicroSD*
 
 ---
 
 <p align="center">
-  <img src="docs/NX-Edge_3D_render.jpg" alt="NX-Edge 3D Board Render" width="95%">
+  <img src="docs/NX-Edge_3D_render.jpg" alt="NX-Edge M.2 2260 3D Top View" width="95%">
 </p>
 <p align="center">
-  <em>NX-Edge 3D Render — Dense 6-layer layout in M.2 2280 Key B form factor featuring 45° ESP32-S3, WSON-8 Flash, Ignion Chip Antenna + U.FL, LiPo Charger, Fuel Gauge, 2A Buck Regulator, and Switched NeoPixel Bus.</em>
+  <em>NX-Edge 3D Render (Top View) — Ultra-dense 6-layer layout condensed into the M.2 2260 Key B form factor.</em>
+</p>
+
+<p align="center">
+  <img src="docs/NX-Edge_2260_iso.jpg" alt="NX-Edge M.2 2260 3D Perspective View" width="90%">
+</p>
+<p align="center">
+  <em>NX-Edge 3D Perspective View — Complete single-sided placement featuring 45° ESP32-S3, QSPI Flash, BNO085 IMU, RV-3028 RTC, MAX98357A I2S Audio Amp, MicroSD slot, LiPo Charger & Fuel Gauge.</em>
 </p>
 
 ---
@@ -18,11 +25,13 @@
 
 The **NX-Edge** is an ultra-dense, agile embedded development platform engineered to bridge the gap between high-speed benchtop prototyping and space-constrained, high-vibration interactive builds (tactical gear, robotics, custom sabers, wearable tech, and modular IoT nodes).
 
-Built in the standard **M.2 2280 ($22 \times 80\text{ mm}$)** envelope on an advanced **6-layer high-density PCB** with **100% single-sided component placement** (zero components on the bottom layer), the NX-Edge delivers a **hybrid mechanical and electrical architecture**:
+Built on an advanced **6-layer high-density PCB** with **100% single-sided component placement** (zero components on the bottom layer), the NX-Edge delivers a **hybrid mechanical and electrical architecture**:
 
-1. **The Modular Cartridge:** Standard **M.2 Key B edge connector** (up to 75 pins) allowing the board to slide directly into low-profile carrier boards, custom backplanes, or modular hilt sleds.
-2. **The Castellated Prototyping Companion:** Dual perimeter rows of **castellated edge holes and solder pads** allow the board to be used directly on breadboards with pin headers, wired via fly-leads, or soldered flat as a surface-mount System-on-Module (SoM) onto carrier PCBs without requiring an M.2 socket.
-3. **Zero-Z Flat Bottom:** Because all active ICs, passives, and connectors are strictly top-mounted, the bottom is flat copper and solder mask—allowing it to be mounted flush against aluminum chassis, heatsinks, 3D prints, or battery packs using thermal tape without risk of short circuits.
+1. **Target Form Factor — The M.2 2260 ($22 \times 60\text{ mm}$) Blade:** Through methodical component packing and 6-layer stripline routing, the entire active hardware suite—including the 4-bit MicroSD card slot, BNO085 9-DOF IMU, RTC, and MAX98357A audio amplifier—fits completely within the ultra-compact **$60\text{ mm}$ envelope**.
+2. **2280 Layout Continuity:** The full **M.2 2280 ($22 \times 80\text{ mm}$)** geometry is retained in schematics and board design as an optional long-tail profile for applications requiring additional thermal copper heatsinking or mechanical backplane rail guides.
+3. **The Modular Cartridge:** Standard **M.2 Key B edge connector** (up to 75 pins) allowing the board to slide directly into low-profile carrier boards, custom backplanes, or modular hilt sleds.
+4. **The Castellated Prototyping Companion:** Dual perimeter rows of **castellated edge holes and solder pads** allow the board to be used directly on breadboards with pin headers, wired via fly-leads, or soldered flat as a surface-mount System-on-Module (SoM) onto carrier PCBs without requiring an M.2 socket.
+5. **Zero-Z Flat Bottom:** Because all active ICs, passives, and connectors are strictly top-mounted, the bottom is flat copper and solder mask—allowing it to be mounted flush against aluminum chassis, heatsinks, 3D prints, or battery packs using thermal tape without risk of short circuits.
 
 > [!IMPORTANT]
 > **NX Custom Maker Interconnect (Non-PC Hardware):**  
@@ -45,10 +54,10 @@ Built in the standard **M.2 2280 ($22 \times 80\text{ mm}$)** envelope on an adv
 | **NeoPixel Driver** | **Routed** | P-FET `Q2` (DMP3130L-7) + NPN `Q3` (BC847W) on `IO12` with 3 castellated pads (`VN`, `NPD_IN`, `GND`) for high-power strips. |
 | **Onboard Indicators**| **Routed** | Onboard RGB NeoPixel (WS2812B/SK6812) powered from `VN` + User LED (LED13 / `D3`) with resistor `R13`. |
 | **6-Layer Stackup** | **Configured**| Upgraded from 4-layer to high-density 6-layer with 0.45 mm / 0.25 mm micro-vias for optimal signal integrity. |
-| **MicroSD Slot** | *Planned* | Molex 105162 push-pull slot running in native **4-bit hardware SDMMC** mode via ESP32-S3 DMA engine. |
-| **Motion Sensor** | *Planned* | CEVA / Hillcrest Labs `BNO085` 9-DOF IMU with dedicated 32.768 kHz quartz crystal and sensor-fusion engine. |
-| **Audio Amplifier** | *Planned* | Maxim `MAX98357A` I2S Class-D mono amplifier delivering up to 3.2W into 4Ω directly from `VIN`. |
-| **RTC Subsystem** | *Planned* | Micro Crystal `RV-3028-C7` extreme low-power ($45\,\text{nA}$) real-time clock with backup cap `C34`. |
+| **MicroSD Slot** | **Routed** | Molex 105162 push-pull slot running in native **4-bit hardware SDMMC** mode via dedicated internal stripline bus. |
+| **Motion Sensor** | **Placed** | CEVA / Hillcrest Labs `BNO085` 9-DOF IMU with dedicated 32.768 kHz quartz crystal and sensor-fusion engine. |
+| **Audio Amplifier** | **Placed** | Maxim `MAX98357A` I2S Class-D mono amplifier delivering up to 3.2W into 4Ω directly from `VIN`. |
+| **RTC Subsystem** | **Placed** | Micro Crystal `RV-3028-C7` extreme low-power ($45\,\text{nA}$) real-time clock with backup capacitor. |
 
 ---
 
@@ -116,11 +125,13 @@ The NX-Edge implements an autonomous, low-loss **Power-Path management architect
 
 ## Mechanical Specifications
 
-* **Form Factor Standard:** M.2 2280 ($22.0\text{ mm} \times 80.0\text{ mm}$).
+* **Form Factor Standard:** Dual-compatible envelope:
+  * **Primary Target:** M.2 2260 ($22.0\text{ mm} \times 60.0\text{ mm}$) ultra-dense blade.
+  * **Extended Profile:** M.2 2280 ($22.0\text{ mm} \times 80.0\text{ mm}$) for additional copper heatsinking and rail sleds.
 * **Connector Type:** M.2 Key B card edge (up to 75 pins).
 * **PCB Thickness:** Standard $1.6\text{ mm}$ (or $0.8\text{ mm}$ option for slimline M.2 sockets).
-* **Component Clearance:** 100% single-sided top placement. Completely flat bottom surface.
-* **Prototyping Headers:** Dual-edge castellated pin holes for breadboards and surface mounting.
+* **Component Clearance:** 100% single-sided top placement. Completely flat bottom surface (Zero-Z).
+* **Prototyping Headers:** Dual-edge castellated pin holes and solder pads for breadboards and surface mounting.
 
 ---
 
