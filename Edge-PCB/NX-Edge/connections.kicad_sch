@@ -5936,6 +5936,283 @@
 		)
 	)
 	(symbol
+		(lib_id "Connector:Bus_M.2_Socket_B")
+		(at 45.72 147.32 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "41c58875-4e3a-4e3b-aeb6-f262832869ad")
+		(property "Reference" "J8"
+			(at 47.8633 96.52 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "Bus_M.2_Socket_B"
+			(at 47.8633 99.06 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Connector_PCBEdge:M.2_2260-xx-B"
+			(at 45.72 120.65 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://web.archive.org/web/20200613074028/http://read.pudn.com/downloads794/doc/project/3133918/PCIe_M.2_Electromechanical_Spec_Rev1.0_Final_11012013_RS_Clean.pdf#page=154"
+			(at 45.72 172.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "M.2 Socket 2 Mechanical Key B"
+			(at 45.72 147.32 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "4"
+			(uuid "d9fa4119-32c0-4876-9f84-a460dcefd4f1")
+		)
+		(pin "6"
+			(uuid "4cd37f68-2484-47bc-8a51-c3617cff50fc")
+		)
+		(pin "1"
+			(uuid "75058410-bc7f-4783-b768-31d8a23010e7")
+		)
+		(pin "2"
+			(uuid "b931cfb1-56a8-4f3d-9004-464979359928")
+		)
+		(pin "3"
+			(uuid "61c5ab93-eab6-4a3c-9449-5b2d9799cdbf")
+		)
+		(pin "5"
+			(uuid "a62ffe0e-be1d-4571-8071-eef0541d5356")
+		)
+		(pin "8"
+			(uuid "19c36b48-64e3-44f8-86ab-d6667412e58d")
+		)
+		(pin "28"
+			(uuid "6ee9faa3-e709-4751-b307-ec65884800ba")
+		)
+		(pin "31"
+			(uuid "d8b8f697-44cb-41f7-b727-d19a8820e3ef")
+		)
+		(pin "36"
+			(uuid "e167ad10-bdc5-448b-a51f-c6dc0ee7b031")
+		)
+		(pin "22"
+			(uuid "4d826c7b-80c7-42cb-bec6-337dfca18fd9")
+		)
+		(pin "43"
+			(uuid "bae54ab6-e6a0-48bf-9a37-9485a2fc2e32")
+		)
+		(pin "9"
+			(uuid "83e42b94-667e-4218-9575-6d1f00ab6303")
+		)
+		(pin "23"
+			(uuid "45799105-afe5-419c-a35b-22e1d8aaaee7")
+		)
+		(pin "26"
+			(uuid "251d310e-9eb3-47b1-bc87-f3f6df0e0959")
+		)
+		(pin "35"
+			(uuid "7618b139-5d7d-45f2-a09f-0631be0c00a6")
+		)
+		(pin "29"
+			(uuid "428f4212-cc56-4f25-b05a-e9fd666f027f")
+		)
+		(pin "7"
+			(uuid "e8abe730-e546-495f-ac4e-95ba55826225")
+		)
+		(pin "11"
+			(uuid "b90fd2ef-bd1b-4b86-af1d-a5874cdbd39c")
+		)
+		(pin "37"
+			(uuid "8a332491-11bc-4704-913c-69c873163d4a")
+		)
+		(pin "33"
+			(uuid "503afea8-6dda-4233-afd8-b501a8b11537")
+		)
+		(pin "39"
+			(uuid "3622253b-04f2-4437-80d8-358905380c81")
+		)
+		(pin "42"
+			(uuid "9c9d082f-51fa-4947-b53d-632e6e8fb677")
+		)
+		(pin "32"
+			(uuid "949b9018-8cff-42f3-ae3e-589ad61f7d05")
+		)
+		(pin "10"
+			(uuid "ca46369e-6129-4222-9b24-5ebb16116d00")
+		)
+		(pin "21"
+			(uuid "6cfd3720-3acf-44ce-b961-14a3a912f4d6")
+		)
+		(pin "24"
+			(uuid "9a756ccb-7f8c-4c64-8bb5-d374469a39d7")
+		)
+		(pin "25"
+			(uuid "e43e3c6c-809f-4161-a301-47d7a30defb3")
+		)
+		(pin "27"
+			(uuid "773f639c-efce-4961-8efb-e575f90403b5")
+		)
+		(pin "20"
+			(uuid "c2d94fed-5d0a-4fd4-82be-8ae7a00e2edc")
+		)
+		(pin "30"
+			(uuid "f78df02b-2efa-4956-88a5-93f038df3830")
+		)
+		(pin "34"
+			(uuid "575838af-a15d-4981-bca8-09dc83661613")
+		)
+		(pin "38"
+			(uuid "937bd4fa-24b6-45b0-976a-5834db8c3476")
+		)
+		(pin "40"
+			(uuid "0bda8a5a-eb95-4640-ba7a-9e9fd14a6351")
+		)
+		(pin "41"
+			(uuid "6ff2be95-67af-48ee-bd4c-5860ddaaa859")
+		)
+		(pin "45"
+			(uuid "9cbd533b-4e13-4ecf-9285-6b82fc0a9177")
+		)
+		(pin "46"
+			(uuid "576c826d-4d8a-4a91-be44-9550e01a8c87")
+		)
+		(pin "44"
+			(uuid "8a1c8c2c-34d3-4f0f-bfde-101313dbaf65")
+		)
+		(pin "47"
+			(uuid "21e01314-ae87-4196-b8d6-3c0ee7a318d0")
+		)
+		(pin "48"
+			(uuid "08ae1281-8574-4f3a-ab36-241bfa54cabe")
+		)
+		(pin "52"
+			(uuid "5aeabb39-6e6f-454b-b233-18837d101935")
+		)
+		(pin "66"
+			(uuid "148dfc46-c42b-488a-9997-cc1ffbef8837")
+		)
+		(pin "62"
+			(uuid "b4bad367-cf89-4dc5-8488-63d53a8f419a")
+		)
+		(pin "60"
+			(uuid "e5391137-91ce-43cb-a6a3-e8a2b986b01b")
+		)
+		(pin "74"
+			(uuid "5b7a008e-f37c-4f49-9bff-621964e09381")
+		)
+		(pin "51"
+			(uuid "4e800f1f-4bbc-4db2-837c-3d89af4b6ba4")
+		)
+		(pin "54"
+			(uuid "1ad066b1-47d4-482c-b5c3-7273788acdf7")
+		)
+		(pin "55"
+			(uuid "533bf2b9-6586-490b-9fe7-6039532c6546")
+		)
+		(pin "64"
+			(uuid "391d264a-5ec6-402a-af01-1c78f7e2aa5d")
+		)
+		(pin "57"
+			(uuid "3b8c5fe0-ad01-4191-9302-e31a1eb0a5b0")
+		)
+		(pin "70"
+			(uuid "65e7869f-79e6-4dd6-8b4d-848cc2b169bd")
+		)
+		(pin "61"
+			(uuid "e4f1995e-52f1-44d2-82c1-168a4ece23d6")
+		)
+		(pin "71"
+			(uuid "bf7f5249-ccc2-4e73-84cc-e66de5c7ffe0")
+		)
+		(pin "73"
+			(uuid "04f03da0-11dc-45e5-a70e-7180393f90f6")
+		)
+		(pin "50"
+			(uuid "9b0c0bde-dae7-4ef9-81fc-a780fe13ff24")
+		)
+		(pin "56"
+			(uuid "de7c77c0-37e5-4668-99a0-0868f84c21b9")
+		)
+		(pin "59"
+			(uuid "f23e6a0b-7bd0-48d3-827b-bd7680674c5b")
+		)
+		(pin "49"
+			(uuid "f2fd6b84-073f-468d-b6ac-038192496210")
+		)
+		(pin "53"
+			(uuid "c49d9e2a-565b-4bda-a426-5e1b38fcdf9f")
+		)
+		(pin "63"
+			(uuid "e9fd8369-d953-4572-9c3a-89e0e0f64dae")
+		)
+		(pin "65"
+			(uuid "0111d270-7682-43d4-859f-19ebdb4ae48e")
+		)
+		(pin "67"
+			(uuid "056c6ac0-eb18-44ca-b63a-e6176cc1eeb3")
+		)
+		(pin "58"
+			(uuid "94e4f8cd-d1f1-4fcd-a5ee-dfa80b6fa08c")
+		)
+		(pin "68"
+			(uuid "cb960493-09b8-4464-aca2-c8113c2f69cd")
+		)
+		(pin "69"
+			(uuid "a8507e12-41ef-40cb-9a0c-fbb88dd22764")
+		)
+		(pin "72"
+			(uuid "63ca34c5-8c27-4217-8218-eadab048f55b")
+		)
+		(pin "75"
+			(uuid "8f4cbfdf-b1b2-4f85-b569-62e6b87209cb")
+		)
+		(instances
+			(project "NX-Edge"
+				(path "/801a8456-ae35-4380-8992-bdd17fb616f2/92cfb5b4-91c1-445c-8a74-08b8ff436045"
+					(reference "J8")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:GND")
 		(at 52.07 72.39 0)
 		(unit 1)
@@ -7604,7 +7881,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "NX-Edge_footprints:M.2_2280-xx-B"
+		(property "Footprint" "Connector_PCBEdge:M.2_2280-xx-B"
 			(at 113.03 119.38 0)
 			(hide yes)
 			(show_name no)

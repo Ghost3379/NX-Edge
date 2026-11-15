@@ -3758,145 +3758,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "power:+3.3V"
-			(power global)
-			(pin_numbers
-				(hide yes)
-			)
-			(pin_names
-				(offset 0)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "#PWR"
-				(at 0 -3.81 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "+3.3V"
-				(at 0 3.556 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "global power"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "+3.3V_0_1"
-				(polyline
-					(pts
-						(xy -0.762 1.27) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 2.54) (xy 0.762 1.27)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0) (xy 0 2.54)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "+3.3V_1_1"
-				(pin power_in line
-					(at 0 0 90)
-					(length 0)
-					(name ""
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "power:+3V3"
 			(power global)
 			(pin_numbers
@@ -6407,7 +6268,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board no)
+		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "0770c7d0-0e16-4178-b25b-cbb7b20b6864")
@@ -6488,7 +6349,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board no)
+		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -6566,7 +6427,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board no)
+		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "0d89c146-7efa-4f87-9ea8-648cd64e19d4")
@@ -6645,7 +6506,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board no)
+		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "14e9dbf3-5617-4e71-abde-ba0904d9f1fd")
@@ -6885,7 +6746,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board no)
+		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "1cd83c45-8e4a-46be-b065-de5613d2b8a2")
@@ -6966,7 +6827,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board no)
+		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -7045,7 +6906,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board no)
+		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "1dc7e015-aba9-4099-b330-b07cbadc9367")
@@ -7519,7 +7380,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board no)
+		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -7778,7 +7639,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board no)
+		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "53a43314-8f71-4d45-97e1-55c6cc4be6a6")
@@ -7936,7 +7797,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board no)
+		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -8095,7 +7956,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board no)
+		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -8252,7 +8113,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board no)
+		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "5f456d15-092c-48b1-8a31-baf1c80622e7")
@@ -8411,7 +8272,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board no)
+		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "64d17992-3edc-4bef-85e3-31885e7ef901")
@@ -8480,84 +8341,6 @@
 			(project "NX-Edge"
 				(path "/801a8456-ae35-4380-8992-bdd17fb616f2/abf03440-1dcd-4ee6-8b3f-7e7038149428"
 					(reference "R16")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "power:+3.3V")
-		(at 232.41 101.6 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board no)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "6562f0e4-d334-47ed-bdea-4859063ab9d5")
-		(property "Reference" "#PWR070"
-			(at 232.41 105.41 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "+3.3V"
-			(at 232.41 96.52 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" ""
-			(at 232.41 101.6 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 232.41 101.6 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Power symbol creates a global label with name \"+3.3V\""
-			(at 232.41 101.6 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "04758ed1-d6ad-4908-af94-16d3391c2678")
-		)
-		(instances
-			(project "NX-Edge"
-				(path "/801a8456-ae35-4380-8992-bdd17fb616f2/abf03440-1dcd-4ee6-8b3f-7e7038149428"
-					(reference "#PWR070")
 					(unit 1)
 				)
 			)
@@ -8647,7 +8430,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board no)
+		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -8726,7 +8509,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board no)
+		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "6ad14c2f-8046-4f43-b93a-d0e2fec4f4ff")
@@ -8965,7 +8748,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board no)
+		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "6f2a1f79-e31b-4059-837a-bc9d037d08e2")
@@ -9034,6 +8817,84 @@
 			(project "NX-Edge"
 				(path "/801a8456-ae35-4380-8992-bdd17fb616f2/abf03440-1dcd-4ee6-8b3f-7e7038149428"
 					(reference "C32")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 232.41 101.6 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "6fac169a-7ac5-4a51-83e0-0726f48e2a5b")
+		(property "Reference" "#PWR068"
+			(at 232.41 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 232.41 96.52 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 232.41 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 232.41 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 232.41 101.6 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "be3cedf5-f718-442b-af09-3991f1fd1da1")
+		)
+		(instances
+			(project "NX-Edge"
+				(path "/801a8456-ae35-4380-8992-bdd17fb616f2/abf03440-1dcd-4ee6-8b3f-7e7038149428"
+					(reference "#PWR068")
 					(unit 1)
 				)
 			)
@@ -9481,7 +9342,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board no)
+		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -9691,7 +9552,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board no)
+		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -9990,7 +9851,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board no)
+		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "8ed1196b-46e7-4164-8260-cb40fb2500ca")
@@ -10071,7 +9932,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board no)
+		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "905916dc-cdae-4d63-820c-0ebd13cadc34")
@@ -10233,7 +10094,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board no)
+		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -10390,7 +10251,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board no)
+		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -10468,7 +10329,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board no)
+		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -10547,7 +10408,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board no)
+		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -10927,7 +10788,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board no)
+		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -11086,7 +10947,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board no)
+		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -11210,7 +11071,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board no)
+		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -11371,7 +11232,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board no)
+		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -11528,7 +11389,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board no)
+		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "d79a6d2e-0664-4693-b57b-f96767f6ec97")
@@ -11609,7 +11470,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board no)
+		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
 		(uuid "dab68cb5-3964-40df-b59c-18712b200de8")
@@ -11690,7 +11551,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board no)
+		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -12043,7 +11904,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board no)
+		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
@@ -12202,7 +12063,7 @@
 		(body_style 1)
 		(exclude_from_sim no)
 		(in_bom yes)
-		(on_board no)
+		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
 		(fields_autoplaced yes)
