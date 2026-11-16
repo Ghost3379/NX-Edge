@@ -1,45 +1,45 @@
 # NX-Edge Hardware Reference Manual
 
-> **Dokumentversion:** 1.0 (Draft)  
-> **Hardware-Revision:** M.2 2260 Key B (6-Lagen High-Density)  
-> **Zielgruppe:** Entwickler, Maker & Prop-Builder
+> **Document Version:** 1.0 (Draft)  
+> **Hardware Target:** M.2 2260 Key B (6-Layer High-Density Stackup)  
+> **Audience:** Embedded Engineers, Makers, and Prop Builders
 
 ---
 
-## Inhaltsverzeichnis
+## Table of Contents
 
-1. [Sicherheits- & Anschlusshinweise (Read First!)](#1-sicherheits---anschlusshinweise-read-first)
-2. [Board-Übersicht & Komponenten-Map](#2-board-übersicht--komponenten-map)
-3. [Stromversorgung & Power-Path (`VIN`, LiPo, Buck)](#3-stromversorgung--power-path-vin-lipo-buck)
-4. [Batterie-Management & Fuel Gauge (`MAX17048`)](#4-batterie-management--fuel-gauge-max17048)
-5. [Smart NeoPixel Power-Switch (`VN`)](#5-smart-neopixel-power-switch-vn)
-6. [RF-Frontend & Antennen-Umschaltung](#6-rf-frontend--antennen-umschaltung)
-7. [Onboard-Sensoren & Echtzeituhr (RTC & IMU)](#7-onboard-sensoren--echtzeituhr-rtc--imu)
-8. [Audio-Verstärker (`MAX98357A`)](#8-audio-verstärker-max98357a)
-9. [Massenspeicher (QSPI Flash & 4-Bit MicroSD)](#9-massenspeicher-qspi-flash--4-bit-microsd)
-10. [Pinout-Tabellen (Castellated Pads & M.2-Fingers)](#10-pinout-tabellen-castellated-pads--m2-fingers)
-11. [Software-Cheatsheet (GPIOs, I2C-Adressen, Snippets)](#11-software-cheatsheet-gpios-i2c-adressen-snippets)
+1. [Safety & Interconnect Warnings (Read First!)](#1-safety--interconnect-warnings-read-first)
+2. [Board Architecture & Subsystem Map](#2-board-architecture--subsystem-map)
+3. [Power Delivery & Power-Path Topology (`VIN`, LiPo, Buck)](#3-power-delivery--power-path-topology-vin-lipo-buck)
+4. [Battery Management & Fuel Gauge (`MAX17048`)](#4-battery-management--fuel-gauge-max17048)
+5. [Smart NeoPixel Power-Cut Architecture (`VN`)](#5-smart-neopixel-power-cut-architecture-vn)
+6. [RF Front-End & Dual-Antenna Switching](#6-rf-front-end--dual-antenna-switching)
+7. [Onboard Sensors & Real-Time Clock (RTC & IMU)](#7-onboard-sensors--real-time-clock-rtc--imu)
+8. [Audio Power Amplifier (`MAX98357A`)](#8-audio-power-amplifier-max98357a)
+9. [High-Speed Storage (QSPI Flash & 4-Bit MicroSD)](#9-high-speed-storage-qspi-flash--4-bit-microsd)
+10. [Pinout & Interface Tables (Castellated Edge-Pads & M.2-Fingers)](#10-pinout--interface-tables-castellated-edge-pads--m2-fingers)
+11. [Software Cheatsheet (GPIOs, I2C Addresses, Quickstart)](#11-software-cheatsheet-gpios-i2c-addresses-quickstart)
 
 ---
 
-## 1. Sicherheits- & Anschlusshinweise (Read First!)
+## 1. Safety & Interconnect Warnings (Read First!)
 
 > [!CAUTION]
-> **KEIN PC-MAINBOARD-STECKER!**  
-> Obwohl der NX-Edge mechanisch in einen standardmäßigen **M.2 Key-B-Sockel** passt, verwendet er ein **proprietäres Maker-Pinout** (ähnlich SparkFun MicroMod). 
-> Auf den M.2-Fingern liegen direkte Batteriespannung (`VBAT`), ungeglättete $5\text{V}$, Lautsprecherausgänge und $3,3\text{V}$-GPIOs.  
-> **Das Board darf NIEMALS in einen Desktop-PC, Laptop oder Standard-NVMe/SATA-Adapter gesteckt werden!**
+> **NOT A STANDARD PC MOTHERBOARD COMPONENT!**  
+> While the NX-Edge mechanically docks into a standard **M.2 Key-B socket**, it utilizes an **independent, custom maker pinout** (similar to SparkFun MicroMod).  
+> The M.2 connector carries raw battery voltage (`VBAT`), unregulated $5\text{V}$, Class-D speaker outputs, and $3.3\text{V}$ GPIOs.  
+> **DO NOT insert this board into a desktop PC, laptop motherboard, or standard off-the-shelf M.2 NVMe/SATA USB enclosure.**
 
-* **Maximale Eingangsspannung an `VBUS` (USB-C):** $5,5\text{V}$ (Standard USB 5V).
-* **Maximale Eingangsspannung an `VBAT` (JST-PH):** $4,2\text{V}$ (1S LiPo / Li-Ion Zelle).
-* **Ausgangsspannung der Logik:** Strikte $3,3\text{V}$. Alle ESP32-S3 GPIOs sind **NICHT 5V-tolerant**!
+* **Maximum Input Voltage on `VBUS` (USB-C):** $5.5\text{V}$ (Standard USB 5V rail).
+* **Maximum Input Voltage on `VBAT` (JST-PH):** $4.2\text{V}$ (1S LiPo / Li-Ion single cell).
+* **Logic Level:** Pure $3.3\text{V}$. ESP32-S3 GPIOs are **NOT 5V-tolerant**!
 
 ---
 
-## 2. Board-Übersicht & Komponenten-Map
+## 2. Board Architecture & Subsystem Map
 
-<!-- BILD-PLATZHALTER: BOARD-MAP -->
-> 📷 **BILD 1 BENÖTIGT:** *Draufsicht (Top-Render) mit Beschriftungs-Pfeilen auf die Hauptblöcke (USB, ESP32, Flash, IMU, Audio, SD, JST, etc.)*
+<!-- IMAGE PLACEHOLDER: BOARD-MAP -->
+> 📷 **IMAGE 1 NEEDED:** *Top-down 3D render or PCB screenshot with callout labels pointing to major functional blocks (USB-C, ESP32-S3, Flash, IMU, Audio, MicroSD, JST, RTC).*
 
 ```text
 [USB-C] ─────────────────── [Ignion Ceramic Antenna + U.FL]
@@ -57,9 +57,9 @@
 
 ---
 
-## 3. Stromversorgung & Power-Path (`VIN`, LiPo, Buck)
+## 3. Power Delivery & Power-Path Topology (`VIN`, LiPo, Buck)
 
-Der NX-Edge regelt die Umschaltung zwischen USB und Akku völlig autonom hardwareseitig:
+The NX-Edge features an autonomous, low-loss **Power-Path management circuit** that transitions seamlessly between USB power and battery operation:
 
 ```text
   USB-C (VBUS 5V) ──► [Schottky D2] ─────────┐
@@ -71,137 +71,139 @@ Der NX-Edge regelt die Umschaltung zwischen USB und Akku völlig autonom hardwar
                                                     └─► [NeoPixel / Audio]
 ```
 
-### Der Hard-Cut Jumper `JP2` (Echter 0µA Standby)
-Zwischen dem Pluspol des JST-Akkusteckers und dem Systemnetz liegt das Lötjumper-Feld **`JP2`**:
-* **Standard:** Mit einer Lötbrücke geschlossen. Der Akku versorgt das System.
-* **Für externe Schalter:** Die Lötbrücke wird durchtrennt und zwei Litzen zu einem physischen Ein/Aus-Kippschalter am Gehäuse/Hilt gelegt. Ergebnis: **Absolut $0,0\,\mu\text{A}$ Entladung** bei Nichtbenutzung.
+### The Hard-Cut Solder Jumper `JP2` (True 0µA Standby)
+Located directly between the positive terminal of the JST battery connector and the internal `VBAT` net is solder jumper **`JP2`**:
+* **Default Configuration:** Bridged with solder. Battery power feeds the system directly.
+* **External Power Switch Mode:** Cut the copper trace / solder bridge and wire the two pads to an external mechanical toggle or slide switch mounted on your project chassis/hilt. This achieves **true $0.0\,\mu\text{A}$ zero-drain standby** when stored long-term.
 
-<!-- BILD-PLATZHALTER: JP2 DETAIL -->
-> 📷 **BILD 2 BENÖTIGT:** *Nahaufnahme von JP2 und dem JST-PH Stecker.*
-
----
-
-## 4. Batterie-Management & Fuel Gauge (`MAX17048`)
-
-* **Lade-IC (`BQ25170`):** Lädt die 1S LiPo-Zelle autonom mit $600\text{–}800\,\text{mA}$. Eine rote Status-LED zeigt den Ladevorgang an.
-* **Fuel Gauge (`MAX17048G`):** 
-  * I2C-Adresse: **`0x36`**
-  * Misst die Zellenspannung ($V_{CELL}$) direkt am Akkuanschluss (ohne Spannungsabfall durch Leiterbahnen).
-  * Berechnet den Ladezustand (**SoC in %**) über Maxim's ModelGauge-Algorithmus (kein Shunt-Widerstand nötig!).
-  * Alarm-Pin an **`IO7`** (kann den ESP32-S3 bei kritischem Akkustand wecken).
+<!-- IMAGE PLACEHOLDER: JP2 DETAIL -->
+> 📷 **IMAGE 2 NEEDED:** *Close-up crop of solder jumper JP2 and the JST-PH connector.*
 
 ---
 
-## 5. Smart NeoPixel Power-Switch (`VN`)
+## 4. Battery Management & Fuel Gauge (`MAX17048`)
 
-Externe WS2812B/SK6812 LED-Streifen ziehen auch im ausgeschalteten Zustand ca. $1\,\text{mA}$ Ruhestrom pro Pixel. Der NX-Edge besitzt dafür eine hardwareseitige Stromabschaltung:
+* **Autonomous LiPo Charger (`BQ25170`):** Automatically charges single-cell 1S LiPo/Li-Ion batteries at $600\text{–}800\,\text{mA}$. An onboard status LED illuminates during active charging.
+* **ModelGauge™ Fuel Gauge (`MAX17048G`):**
+  * I2C Address: **`0x36`**
+  * Senses cell voltage ($V_{CELL}$) directly at the battery terminal with zero trace IR-drop distortion.
+  * Calculates real-time **State of Charge (SoC %)** and discharge rate using Maxim's ModelGauge algorithm without requiring a bulky current-sense shunt.
+  * Low-battery alert interrupt wired to **`IO7`** (can wake the ESP32-S3 from deep sleep).
 
-* **Schalttransistor:** P-Kanal MOSFET `Q2` (DMP3130L-7), angesteuert über NPN `Q3`.
-* **Steuer-Pin:** **`GPIO12`** (`CTRL_NP`).
-  * `digitalWrite(12, HIGH)` -> Power-Rail `VN` ist **EIN** ($5\text{V}$ bei USB / $V_{BAT}$ bei Akku).
-  * `digitalWrite(12, LOW)` -> Power-Rail `VN` ist **AUS** ($0,0\text{V}$, echter Nullverbrauch).
-* **Onboard-NeoPixel:** Hängt ebenfalls an der geschalteten `VN`-Schiene (Datenleitung auf **`IO4`**).
-* **Castellated Pads:** Die 3 Pads an der oberen Kante führen `VN`, `NPD_IN` (Daten) und `GND` direkt nach außen.
+---
+
+## 5. Smart NeoPixel Power-Cut Architecture (`VN`)
+
+Addressable RGB LEDs (WS2812B/SK6812) draw roughly $1\,\text{mA}$ quiescent quiescent current per pixel even when displaying black. To preserve battery life in portable builds, the NX-Edge integrates a dedicated hardware power switch:
+
+* **High-Side Switch:** P-Channel MOSFET `Q2` (DMP3130L-7), driven by NPN BJT `Q3`.
+* **Control Pin:** **`GPIO12`** (`CTRL_NP`).
+  * `digitalWrite(12, HIGH)` -> Switched rail `VN` is **ACTIVE** ($5\text{V}$ on USB / $V_{BAT}$ on battery).
+  * `digitalWrite(12, LOW)` -> Switched rail `VN` is **DISCONNECTED** ($0.0\text{V}$, true zero quiescent leakage).
+* **Onboard RGB Status LED:** Sourced directly from `VN` with data driven from **`IO4`**.
+* **Edge Breakout:** Three castellated pads along the top-right perimeter carry `VN`, `NPD_IN` (data), and `GND` for direct connection to external strips.
 
 > [!WARNING]
-> **USB-Strombegrenzung beachten:**  
-> Wenn viele NeoPixel (z. B. 30–60 LEDs) auf voller Helligkeit weiß leuchten, können Ströme von $>2\text{A}$ fließen. Bei reinem USB-Betrieb an schwachen Ports muss die Helligkeit in Software begrenzt werden (`FastLED.setMaxPowerInVoltsAndMilliamps(5, 1000)`), um Brownouts zu verhindern. Am Akku fängt die LiPo-Zelle diese Spitzen ab.
+> **USB Brownout Precautions:**  
+> Driving 30–60 NeoPixels at 100% white can pull $>2.0\text{A}$ of instantaneous current. When running on USB without a battery connected, weak host ports or passive hubs will sag and trigger an MCU brownout reset. Always clamp peak power in software when operating strictly on USB:  
+> `FastLED.setMaxPowerInVoltsAndMilliamps(5, 1000);`  
+> When a LiPo battery is attached, the cell naturally buffers high-current transient spikes.
 
 ---
 
-## 6. RF-Frontend & Antennen-Umschaltung
+## 6. RF Front-End & Dual-Antenna Switching
 
-Der NX-Edge verfügt über zwei Antennenpfade, umschaltbar im Betrieb:
+The board incorporates two RF paths with low insertion loss:
 
-* **HF-Schalter:** Infineon `BGS12WN6`
-* **Steuer-Pin:** **`GPIO10`** (`RF_CTRL`)
-  * **`LOW` (Standard):** Interne **Ignion NN02-201** Keramik-Chipantenne aktiv.
-  * **`HIGH`:** Externe **Hirose U.FL / IPEX** Buchse aktiv (z. B. für Antennenkabel aus Metall- oder Carbongehäusen).
+* **RF Switch IC:** Infineon `BGS12WN6` ($0.7 \times 1.1\text{ mm}$ SPDT).
+* **Control Pin:** **`GPIO10`** (`RF_CTRL`).
+  * **`LOW` (Default):** Onboard high-efficiency **Ignion NN02-201** ceramic chip antenna active.
+  * **`HIGH`:** Miniature **Hirose U.FL / IPEX** receptacle active (for routing out of metal, carbon fiber, or shielded housings).
 
 ---
 
-## 7. Onboard-Sensoren & Echtzeituhr (RTC & IMU)
+## 7. Onboard Sensors & Real-Time Clock (RTC & IMU)
 
-### 9-DOF IMU (`BNO085`)
-* **I2C-Adresse:** **`0x4A`** (Default)
-* **Takt:** Eigener $32,768\,\text{kHz}$ Quarz für maximale Sensor-Fusion-Präzision.
-* **Interrupt:** `!INT_DOF` an **`IO5`** (RTC-wake-fähig).
+### 9-DOF IMU Co-Processor (`BNO085`)
+* **I2C Address:** **`0x4A`** (Default)
+* **Oscillator:** Dedicated $32.768\,\text{kHz}$ quartz crystal for drift-free Hillcrest Labs sensor-fusion algorithms (rotation vectors, quaternions, tap detection).
+* **Interrupt:** `!INT_DOF` on **`IO5`** (deep-sleep wake capable).
 
 ### Ultra-Low-Power RTC (`RV-3028-C7`)
-* **I2C-Adresse:** **`0x52`**
-* **Stromaufnahme:** Typisch nur $45\,\text{nA}$.
-* **Interrupt / Alarm:** `!INT_RTC` an **`IO6`** (weckt ESP32 aus Deep Sleep).
-* **Backup-Stromversorgung (Zwei Optionen):**
-  1. **Option A (SMD-Supercap Onboard):** Wird direkt auf die Lötflächen gesetzt. Das Lade-Pad `R-CHARGE` wird mit einer $0\,\Omega$-Brücke kurzgeschlossen; der interne Trickle-Charger der RV-3028 lädt den Kondensator automatisch über I2C.
-  2. **Option B (Externe Pufferbatterie):** Litzen zu einer externen Knopfzelle (CR1220 etc.) anlöten. Bei Primärzellen bleibt die Ladebrücke unbestückt!
+* **I2C Address:** **`0x52`**
+* **Current Consumption:** Industry-leading $45\,\text{nA}$ typical.
+* **Interrupt / Alarm:** `!INT_RTC` on **`IO6`** (deep-sleep wake capable).
+* **Flexible Backup Power Options:**
+  1. **Option A (Onboard SMD Supercapacitor):** Mounted directly to the footprint. Solder-bridge the `R-CHARGE` pad with a $0\,\Omega$ link; the RV-3028's internal programmable trickle charger maintains supercap voltage automatically over I2C.
+  2. **Option B (External Primary Cell):** Solder flying leads to an external coin cell holder (e.g. CR1220). **Leave `R-CHARGE` unpopulated** to prevent reverse-charging non-rechargeable cells.
 
-<!-- BILD-PLATZHALTER: RTC BACKUP DETAIL -->
-> 📷 **BILD 3 BENÖTIGT:** *Nahaufnahme der RTC, des Supercap-Pads und der R-CHARGE Brücke.*
+<!-- IMAGE PLACEHOLDER: RTC BACKUP DETAIL -->
+> 📷 **IMAGE 3 NEEDED:** *Close-up crop of the RV-3028, supercapacitor pads, and the R-CHARGE jumper.*
 
 ---
 
-## 8. Audio-Verstärker (`MAX98357A`)
+## 8. Audio Power Amplifier (`MAX98357A`)
 
-* **Typ:** I2S Mono Class-D Verstärker, bis zu **$3,2\text{W}$ an $4\,\Omega$**.
-* **Versorgung:** Direkt aus `VIN` für maximale Dynamik und Lautstärke.
-* **I2S-Signalbelegung:**
+* **Type:** Filterless I2S Mono Class-D amplifier delivering up to **$3.2\text{W}$ into $4\,\Omega$**.
+* **Power Supply:** Powered directly from `VIN` for maximum audio dynamic headroom.
+* **Digital I2S Pinout:**
   * Bit Clock (`BCLK`): **`IO33`**
-  * Data In (`DIN`): **`IO34`**
-  * Word Select (`LRCLK`): **`IO35`**
-* **Lautsprecher-Anschluss:** Zwei Castellated Pads an der Kante (`SPK+` / `SPK-`).
-* *(Hinweis: Gain-Widerstands-Option wird in Revision 1.1 ergänzt).*
+  * Serial Data (`DIN`): **`IO34`**
+  * Word Select / Left-Right Clock (`LRCLK`): **`IO35`**
+* **Speaker Output:** Two dedicated castellated pads on the perimeter (`SPK+` / `SPK-`).
+* *(Note: Hardware gain resistor option planned for Revision 1.1).*
 
 ---
 
-## 9. Massenspeicher (QSPI Flash & 4-Bit MicroSD)
+## 9. High-Speed Storage (QSPI Flash & 4-Bit MicroSD)
 
-* **16 MB QSPI Flash:** Winbond `W25Q128JVPIQ` (WSON-8). Läuft auf internen Striplines auf Layer 3 mit bis zu $80\text{ MHz}$.
-* **MicroSD-Kartenhalter:** Molex 105162 Push-Pull. Läuft im nativen **Hardware 4-Bit SDMMC Slot 1 Modus** (nicht lahmes SPI!):
+* **16 MB QSPI Flash:** Winbond `W25Q128JVPIQ` (WSON-8). Routed via internal stripline traces on Layer 3 for clock speeds up to $80\text{ MHz}$.
+* **MicroSD Socket:** Molex 105162 push-pull slot operating in native **Hardware 4-Bit SDMMC Slot 1 mode** (avoids slow SPI bottlenecks):
   * `CLK`: **`IO39`** (`MTCK`)
   * `CMD`: **`IO38`**
   * `DAT0`: **`IO40`** (`MTDO`)
   * `DAT1`: **`IO41`** (`MTDI`)
   * `DAT2`: **`IO42`** (`MTMS`)
   * `DAT3`: **`IO2`**
-  * *Durchsatz:* Bis zu $30\text{–}40\,\text{MB/s}$ per Hardware-DMA für Audio-WAV-Streaming und Grafik-Assets.
+  * *Throughput:* Up to $30\text{–}40\,\text{MB/s}$ via DMA for high-fidelity audio WAV streaming and real-time graphics.
 
 ---
 
-## 10. Pinout-Tabellen (Castellated Pads & M.2-Fingers)
+## 10. Pinout & Interface Tables (Castellated Edge-Pads & M.2-Fingers)
 
-### Die 10 Castellated Edge-Pads (Übersicht)
+### Castellated Edge-Pads Summary
 
-<!-- BILD-PLATZHALTER: EDGE PADS GRAFIK -->
-> 📷 **BILD 4 BENÖTIGT:** *Grafik oder beschrifteter Screenshot der beiden Platinenkanten mit Pin-Namen.*
+<!-- IMAGE PLACEHOLDER: EDGE PADS PINOUT -->
+> 📷 **IMAGE 4 NEEDED:** *Annotated graphic showing the castellated edge-pad pinout on both sides.*
 
-| Kante | Gruppe | Pin-Nr. | Signal-Name | Funktion |
+| Edge / Position | Group | Pin # | Signal Name | Function Description |
 | :--- | :--- | :---: | :--- | :--- |
-| **Rechts (Oben)** | **NeoPixel Bus** | 1 | `GND` | Masse für LED-Strip |
-| | | 2 | `NPD_IN` | 3.3V Datenleitung (GPIO4) |
-| | | 3 | `VN` | Geschaltete Power-Schiene |
-| **Rechts (Unten)**| **Audio Output** | 1 | `SPK+` | Lautsprecher Ausgang (+) |
-| | | 2 | `SPK-` | Lautsprecher Ausgang (-) |
-| **Links (Unten)** | **I2C & Serial** | 1 | `IO9` | I2C Bus: **SCL** |
-| | | 2 | `IO8` | I2C Bus: **SDA** |
-| | | 3 | `RX` | UART0: **RX** (ESP32-S3 Empfang) |
-| | | 4 | `TX` | UART0: **TX** (ESP32-S3 Senden) |
-| **Links (Oben)** | **System / GPIO**| *(J9 TOP)* | TBD | *(In Belegung: 3V3, GND, VBAT, Reset, GPIOs)* |
+| **Right (Top)** | **NeoPixel Bus** | 1 | `GND` | Ground return for external LED strips |
+| | | 2 | `NPD_IN` | 3.3V Data Drive (GPIO4) |
+| | | 3 | `VN` | Switched Power Rail (5V on USB / VBAT on battery) |
+| **Right (Bottom)**| **Audio Output** | 1 | `SPK+` | Positive Speaker Output (Class-D bridge-tied load) |
+| | | 2 | `SPK-` | Negative Speaker Output (Class-D bridge-tied load) |
+| **Left (Bottom)** | **I2C & Serial** | 1 | `IO9` | Shared I2C Bus: **SCL** |
+| | | 2 | `IO8` | Shared I2C Bus: **SDA** |
+| | | 3 | `RX` | UART0: **RX** (ESP32-S3 Hardware Serial In) |
+| | | 4 | `TX` | UART0: **TX** (ESP32-S3 Hardware Serial Out) |
+| **Left (Top)** | **System / GPIO**| *(J9 TOP)* | TBD | *(Configurable: 3V3, GND, VBAT, Reset, General GPIOs)* |
 
 ---
 
-## 11. Software-Cheatsheet (GPIOs, I2C-Adressen, Snippets)
+## 11. Software Cheatsheet (GPIOs, I2C Addresses, Quickstart)
 
-### I2C-Adress-Tabelle (Bus auf `IO8` / `IO9`)
+### I2C Address Map (Shared Bus on `IO8` / `IO9`)
 
-| Bauteil | Typ | 7-Bit I2C-Adresse (Hex) |
+| Device | Subsystem Function | 7-Bit Address (Hex) |
 | :--- | :--- | :---: |
-| **`MAX17048`** | LiPo Fuel Gauge | **`0x36`** |
-| **`BNO085`** | 9-DOF IMU Co-Processor | **`0x4A`** *(Default)* |
-| **`RV-3028-C7`** | Ultra-Low-Power RTC | **`0x52`** |
+| **`MAX17048`** | ModelGauge™ LiPo Fuel Gauge | **`0x36`** |
+| **`BNO085`** | 9-DOF IMU Sensor Fusion Engine | **`0x4A`** *(Default)* |
+| **`RV-3028-C7`** | Extreme Low-Power Real-Time Clock | **`0x52`** |
 
 ---
 
-### Schnelle Initialisierung in Arduino / ESP-IDF
+### Minimal Arduino / ESP-IDF Board Initialization
 
 ```cpp
 #include <Arduino.h>
@@ -215,27 +217,27 @@ Der NX-Edge verfügt über zwei Antennenpfade, umschaltbar im Betrieb:
 #define PIN_I2C_SCL        9
 
 void setup() {
-  // 1. Serielle Schnittstelle starten
+  // 1. Initialize Hardware Console
   Serial.begin(115200);
 
-  // 2. Status-LED
+  // 2. Configure Onboard User LED
   pinMode(PIN_LED_BUILTIN, OUTPUT);
   digitalWrite(PIN_LED_BUILTIN, HIGH);
 
-  // 3. NeoPixel Power-Rail einschalten
+  // 3. Enable NeoPixel Power Switch (VN Rail)
   pinMode(PIN_NEO_POWER, OUTPUT);
-  digitalWrite(PIN_NEO_POWER, HIGH); // 5V / VBAT an NeoPixel anlegen
+  digitalWrite(PIN_NEO_POWER, HIGH); // Supplies 5V / VBAT to NeoPixels
 
-  // 4. RF-Antenne auf interne Keramik-Antenne stellen (LOW)
+  // 4. Set RF Switch to Internal Ceramic Antenna (LOW)
   pinMode(PIN_RF_CTRL, OUTPUT);
-  digitalWrite(PIN_RF_CTRL, LOW);    // LOW = Keramik, HIGH = U.FL
+  digitalWrite(PIN_RF_CTRL, LOW);    // LOW = Ceramic Chip, HIGH = U.FL
 
-  // 5. I2C Bus initialisieren
+  // 5. Initialize Shared I2C Bus
   Wire.begin(PIN_I2C_SDA, PIN_I2C_SCL, 400000); // 400 kHz Fast Mode
 }
 
 void loop() {
-  // Heartbeat Blink
+  // Simple Heartbeat Blink
   digitalWrite(PIN_LED_BUILTIN, HIGH);
   delay(500);
   digitalWrite(PIN_LED_BUILTIN, LOW);
