@@ -38,22 +38,12 @@
 
 ## 2. Board Architecture & Subsystem Map
 
-<!-- IMAGE PLACEHOLDER: BOARD-MAP -->
-> 📷 **IMAGE 1 NEEDED:** *Top-down 3D render or PCB screenshot with callout labels pointing to major functional blocks (USB-C, ESP32-S3, Flash, IMU, Audio, MicroSD, JST, RTC).*
-
-```text
-[USB-C] ─────────────────── [Ignion Ceramic Antenna + U.FL]
-  │                                      │
-[Power-Path / Buck / Charger]      [ESP32-S3 Core @ 45°]
-  │                                      │
-[JST-PH Battery Connector]         [16MB QSPI Flash]
-  │                                      │
-[MAX98357A Audio Amp]              [RV-3028 RTC + Supercap]
-  │                                      │
-[MicroSD 4-Bit Slot] ───────────── [BNO085 9-DOF IMU]
-  └───────────────────┬──────────────────┘
-                 [M.2 KEY B FINGERS]
-```
+<p align="center">
+  <img src="pictures/NX-Edge_top_ortho.jpg" alt="NX-Edge Raytraced Orthographic Top View" width="100%">
+</p>
+<p align="center">
+  <em>NX-Edge Top-Down Orthographic Raytraced View (M.2 2260 Key B Single-Sided Layout).</em>
+</p>
 
 ---
 
