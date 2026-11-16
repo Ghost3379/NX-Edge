@@ -6,18 +6,24 @@
 ---
 
 <p align="center">
-  <img src="docs/NX-Edge_3D_render.jpg" alt="NX-Edge M.2 2260 3D Top View" width="95%">
+  <img src="docs/pictures/NX-Edge_3D_render.jpg" alt="NX-Edge M.2 2260 3D Top View" width="95%">
 </p>
 <p align="center">
   <em>NX-Edge 3D Render (Top View) — Ultra-dense 6-layer layout condensed into the M.2 2260 Key B form factor.</em>
 </p>
 
 <p align="center">
-  <img src="docs/NX-Edge_2260_iso.jpg" alt="NX-Edge M.2 2260 3D Perspective View" width="90%">
+  <img src="docs/pictures/NX-Edge_2260_iso.jpg" alt="NX-Edge M.2 2260 3D Perspective View" width="90%">
 </p>
 <p align="center">
   <em>NX-Edge 3D Perspective View — Complete single-sided placement featuring 45° ESP32-S3, QSPI Flash, BNO085 IMU, RV-3028 RTC, MAX98357A I2S Audio Amp, MicroSD slot, LiPo Charger & Fuel Gauge.</em>
 </p>
+
+---
+
+> [!TIP]
+> 📖 **Hardware Reference Manual Available:**  
+> Detailed component pinouts, I2C register maps, power-path precautions, Arduino code snippets, and RTC trickle-charge configuration are fully documented in the **[NX-Edge Hardware Reference Manual](docs/HARDWARE_MANUAL.md)**.
 
 ---
 
