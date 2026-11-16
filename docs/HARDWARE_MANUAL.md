@@ -177,7 +177,12 @@ The board incorporates two RF paths with low insertion loss:
 | | | 2 | `IO8` | Shared I2C Bus: **SDA** |
 | | | 3 | `RX` | UART0: **RX** (ESP32-S3 Hardware Serial In) |
 | | | 4 | `TX` | UART0: **TX** (ESP32-S3 Hardware Serial Out) |
-| **Left (Top)** | **System / GPIO**| *(J9 TOP)* | TBD | *(Configurable: 3V3, GND, VBAT, Reset, General GPIOs)* |
+| **Left (Top)** | **Power & Logic** | 1 | `VBUS` | 5V USB Input / Output |
+| | | 2 | `+3V3` | 3.3V System Buck Rail (up to 2.0A) |
+| | | 3 | `RST` | Hardware Reset (active low) |
+| | | 4 | `IO1` | ADC1_CH0 • Touch 1 • RTC Wakeup • PWM |
+| | | 5 | `IO11` | ADC2_CH0 • Touch 11 • RTC Wakeup • PWM |
+| | | 6 | `GND` | System Ground |
 
 ---
 

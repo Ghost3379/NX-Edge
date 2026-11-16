@@ -6013,9 +6013,9 @@
 		)
 		(uuid "90e3bfdc-c0d1-45ae-8a86-97e408be89ff")
 	)
-	(text "M.2. B-KEY"
+	(text "M.2. 2260 B-KEY"
 		(exclude_from_sim no)
-		(at 108.966 85.09 0)
+		(at 126.492 81.28 0)
 		(effects
 			(font
 				(size 3.048 3.048)
@@ -6040,12 +6040,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "3fcea95f-4402-43f2-a5a8-28a3d7e03187")
-	)
-	(junction
-		(at 243.84 134.62)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "447b262e-b1f5-4eb3-8297-11d41a37e10b")
 	)
 	(junction
 		(at 46.99 72.39)
@@ -6297,16 +6291,6 @@
 	)
 	(wire
 		(pts
-			(xy 243.84 132.08) (xy 243.84 134.62)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "64079807-319f-4de5-9b33-a095c67675f7")
-	)
-	(wire
-		(pts
 			(xy 201.93 142.24) (xy 201.93 137.16)
 		)
 		(stroke
@@ -6354,16 +6338,6 @@
 			(type default)
 		)
 		(uuid "7ef6a8cd-64a6-4ad1-938d-249c4be78cb9")
-	)
-	(wire
-		(pts
-			(xy 242.57 132.08) (xy 243.84 132.08)
-		)
-		(stroke
-			(width 0)
-			(type default)
-		)
-		(uuid "829e5719-f632-4677-ba33-13dbfe187aec")
 	)
 	(wire
 		(pts
@@ -6931,6 +6905,19 @@
 		)
 		(uuid "54609d08-e169-4c30-a822-53c55fd7494b")
 	)
+	(hierarchical_label "D-"
+		(shape bidirectional)
+		(at 97.79 134.62 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+			(justify right)
+		)
+		(uuid "6fad16a5-c440-455e-b9c6-f6d69e14fc16")
+	)
 	(hierarchical_label "D+"
 		(shape bidirectional)
 		(at 113.03 41.91 0)
@@ -6966,6 +6953,17 @@
 		)
 		(uuid "8a8945db-23ea-413d-bdda-18b72b81e184")
 	)
+	(hierarchical_label "IO11"
+		(shape bidirectional)
+		(at 242.57 132.08 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "8ace55fd-c64c-45d1-b4be-cc71ef828744")
+	)
 	(hierarchical_label "Audio+"
 		(shape input)
 		(at 219.71 34.29 180)
@@ -6989,6 +6987,19 @@
 			(justify left)
 		)
 		(uuid "c93ca34b-faef-4547-ac6e-7c157fe5d821")
+	)
+	(hierarchical_label "D+"
+		(shape bidirectional)
+		(at 97.79 132.08 180)
+		(effects
+			(font
+				(size 1.27 1.27)
+				(thickness 0.254)
+				(bold yes)
+			)
+			(justify right)
+		)
+		(uuid "db2147f2-c041-4143-8dca-5d281918630f")
 	)
 	(hierarchical_label "IO1"
 		(shape bidirectional)
@@ -7238,7 +7249,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Bus_M.2_Socket_B")
-		(at 45.72 147.32 0)
+		(at 123.19 142.24 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7249,7 +7260,7 @@
 		(fields_autoplaced yes)
 		(uuid "41c58875-4e3a-4e3b-aeb6-f262832869ad")
 		(property "Reference" "J8"
-			(at 47.8633 96.52 0)
+			(at 125.3333 91.44 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7260,7 +7271,7 @@
 			)
 		)
 		(property "Value" "Bus_M.2_Socket_B"
-			(at 47.8633 99.06 0)
+			(at 125.3333 93.98 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7271,7 +7282,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PCBEdge:M.2_2260-xx-B"
-			(at 45.72 120.65 0)
+			(at 123.19 115.57 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7282,7 +7293,7 @@
 			)
 		)
 		(property "Datasheet" "https://web.archive.org/web/20200613074028/http://read.pudn.com/downloads794/doc/project/3133918/PCIe_M.2_Electromechanical_Spec_Rev1.0_Final_11012013_RS_Clean.pdf#page=154"
-			(at 45.72 172.72 0)
+			(at 123.19 167.64 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7293,7 +7304,7 @@
 			)
 		)
 		(property "Description" "M.2 Socket 2 Mechanical Key B"
-			(at 45.72 147.32 0)
+			(at 123.19 142.24 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8682,6 +8693,85 @@
 		)
 	)
 	(symbol
+		(lib_id "power:GND")
+		(at 123.19 190.5 0)
+		(mirror y)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "95d6b16a-528e-40d1-acfd-6fb1e248ef06")
+		(property "Reference" "#PWR0120"
+			(at 123.19 196.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "GND"
+			(at 123.19 195.58 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 123.19 190.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 123.19 190.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
+			(at 123.19 190.5 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "d1ad7718-516a-4f59-84b7-1d326a8b2559")
+		)
+		(instances
+			(project "NX-Edge"
+				(path "/801a8456-ae35-4380-8992-bdd17fb616f2/92cfb5b4-91c1-445c-8a74-08b8ff436045"
+					(reference "#PWR0120")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "power:VBUS")
 		(at 201.93 128.27 0)
 		(mirror y)
@@ -9493,7 +9583,7 @@
 	)
 	(symbol
 		(lib_id "Connector:Bus_M.2_Socket_B")
-		(at 113.03 146.05 0)
+		(at 40.64 148.59 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -9504,7 +9594,7 @@
 		(fields_autoplaced yes)
 		(uuid "d09da0d0-5a13-4c66-a708-815dce18ca6b")
 		(property "Reference" "J6"
-			(at 115.1733 95.25 0)
+			(at 42.7833 97.79 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9515,7 +9605,7 @@
 			)
 		)
 		(property "Value" "Bus_M.2_Socket_B"
-			(at 115.1733 97.79 0)
+			(at 42.7833 100.33 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9526,7 +9616,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PCBEdge:M.2_2280-xx-B"
-			(at 113.03 119.38 0)
+			(at 40.64 121.92 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9537,7 +9627,7 @@
 			)
 		)
 		(property "Datasheet" "https://web.archive.org/web/20200613074028/http://read.pudn.com/downloads794/doc/project/3133918/PCIe_M.2_Electromechanical_Spec_Rev1.0_Final_11012013_RS_Clean.pdf#page=154"
-			(at 113.03 171.45 0)
+			(at 40.64 173.99 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9548,7 +9638,7 @@
 			)
 		)
 		(property "Description" "M.2 Socket 2 Mechanical Key B"
-			(at 113.03 146.05 0)
+			(at 40.64 148.59 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10269,6 +10359,83 @@
 			(project "NX-Edge"
 				(path "/801a8456-ae35-4380-8992-bdd17fb616f2/92cfb5b4-91c1-445c-8a74-08b8ff436045"
 					(reference "#PWR0104")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "power:+3V3")
+		(at 123.19 93.98 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board no)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "f68888af-13ed-41c5-bace-20e80ffa7db8")
+		(property "Reference" "#PWR0100"
+			(at 123.19 97.79 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "+3V3"
+			(at 123.19 88.9 90)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Footprint" ""
+			(at 123.19 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 123.19 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "Power symbol creates a global label with name \"+3V3\""
+			(at 123.19 93.98 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "50e316ab-9b83-4196-8136-188ccd310f2f")
+		)
+		(instances
+			(project "NX-Edge"
+				(path "/801a8456-ae35-4380-8992-bdd17fb616f2/92cfb5b4-91c1-445c-8a74-08b8ff436045"
+					(reference "#PWR0100")
 					(unit 1)
 				)
 			)
