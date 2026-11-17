@@ -127,6 +127,8 @@ The board incorporates two RF paths with low insertion loss:
   1. **Option A (Onboard SMD Supercapacitor):** Mounted directly to the footprint. Solder-bridge the `R-CHARGE` pad with a $0\,\Omega$ link; the RV-3028's internal programmable trickle charger maintains supercap voltage automatically over I2C.
   2. **Option B (External Primary Cell):** Solder flying leads to an external coin cell holder (e.g. CR1220). **Leave `R-CHARGE` unpopulated** to prevent reverse-charging non-rechargeable cells.
 
+// TODO AND WHAT IS RCHAGRED USED FOR? OR WHEEN IS IT USEFUL?
+
 <!-- IMAGE PLACEHOLDER: RTC BACKUP DETAIL -->
 > 📷 **IMAGE 3 NEEDED:** *Close-up crop of the RV-3028, supercapacitor pads, and the R-CHARGE jumper.*
 
