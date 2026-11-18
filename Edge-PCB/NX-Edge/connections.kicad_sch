@@ -864,10 +864,10 @@
 						)
 					)
 				)
-				(pin output line
-					(at -25.4 -22.86 0)
+				(pin bidirectional line
+					(at -25.4 -24.13 0)
 					(length 2.54)
-					(name "DEVSLP"
+					(name "GPIO"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -902,9 +902,9 @@
 					)
 				)
 				(pin bidirectional line
-					(at 25.4 12.7 180)
+					(at -25.4 -19.05 0)
 					(length 2.54)
-					(name "GPIO_0"
+					(name "GPIO"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -938,7 +938,7 @@
 					)
 				)
 				(pin bidirectional line
-					(at -25.4 -19.05 0)
+					(at -25.4 -21.59 0)
 					(length 2.54)
 					(name "GPIO"
 						(effects
@@ -1267,9 +1267,9 @@
 					)
 				)
 				(pin bidirectional line
-					(at 25.4 -38.1 180)
+					(at -25.4 -29.21 0)
 					(length 2.54)
-					(name "COEX3"
+					(name "GPIO"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1303,9 +1303,9 @@
 					)
 				)
 				(pin bidirectional line
-					(at 25.4 -35.56 180)
+					(at -25.4 -26.67 0)
 					(length 2.54)
-					(name "COEX2"
+					(name "GPIO"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -1394,7 +1394,7 @@
 					)
 				)
 				(pin output line
-					(at -25.4 -30.48 0)
+					(at 25.4 -31.75 180)
 					(length 2.54)
 					(name "~{RESET}"
 						(effects
@@ -5580,7 +5580,7 @@
 	)
 	(hierarchical_label "IO36"
 		(shape bidirectional)
-		(at 97.79 161.29 180)
+		(at 97.79 163.83 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5646,12 +5646,12 @@
 	)
 	(hierarchical_label "IO18"
 		(shape bidirectional)
-		(at 148.59 177.8 0)
+		(at 97.79 168.91 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
 		(uuid "6a5c6eac-ed98-4a27-ba34-fb812ff9eadc")
 	)
@@ -5738,12 +5738,12 @@
 	)
 	(hierarchical_label "IO16"
 		(shape bidirectional)
-		(at 148.59 129.54 0)
+		(at 97.79 161.29 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
 		(uuid "b637637d-ee14-47c8-af5c-d6ac04f2466c")
 	)
@@ -5771,12 +5771,12 @@
 	)
 	(hierarchical_label "IO14"
 		(shape bidirectional)
-		(at 148.59 180.34 0)
+		(at 97.79 171.45 180)
 		(effects
 			(font
 				(size 1.27 1.27)
 			)
-			(justify left)
+			(justify right)
 		)
 		(uuid "bcaf49b0-7fb6-4366-9420-a6d942a3a0a1")
 	)
@@ -5793,7 +5793,7 @@
 	)
 	(hierarchical_label "IO37"
 		(shape bidirectional)
-		(at 97.79 165.1 180)
+		(at 97.79 166.37 180)
 		(effects
 			(font
 				(size 1.27 1.27)
