@@ -1,22 +1,15 @@
 # NX-Edge
 
-> **High-Density Modular Embedded Development Platform**  
-> *M.2 2260 / 2280 Key B • 6-Layer High-Density RF/Power Stackup • ESP32-S3 Dual-Core 240MHz • Autonomous LiPo Power-Path & Fuel Gauge • Dual-Antenna RF Front-End • 9-DOF IMU • I2S Audio Amp • 4-bit MicroSD*
+> **Modular Embedded Development Platform**  
+> *M.2 2260 Key B • 6-Layer Stackup • ESP32-S3 Dual-Core 240MHz • Autonomous LiPo Power-Path & Fuel Gauge • Dual-Antenna RF Front-End • 9-DOF IMU • I2S Audio Amp • 4-bit MicroSD*
 
 ---
 
 <p align="center">
-  <img src="docs/pictures/NX-Edge_3D_render.jpg" alt="NX-Edge M.2 2260 3D Top View" width="95%">
+  <img src="docs/pictures/NX-Edge_header-reference.jpg" alt="NX-Edge M.2 2260 3D Top View" width="55%">
 </p>
 <p align="center">
-  <em>NX-Edge 3D Render (Top View) — Ultra-dense 6-layer layout condensed into the M.2 2260 Key B form factor.</em>
-</p>
-
-<p align="center">
-  <img src="docs/pictures/NX-Edge_2260_iso.jpg" alt="NX-Edge M.2 2260 3D Perspective View" width="90%">
-</p>
-<p align="center">
-  <em>NX-Edge 3D Perspective View — Complete single-sided placement featuring 45° ESP32-S3, QSPI Flash, BNO085 IMU, RV-3028 RTC, MAX98357A I2S Audio Amp, MicroSD slot, LiPo Charger & Fuel Gauge.</em>
+  <em>NX-Edge M.2 2260 3D Render — Single-sided top placement with 45° ESP32-S3, QSPI Flash, BNO085 IMU, RV-3028 RTC, MAX98357A Audio Amp, MicroSD slot, LiPo Charger & Fuel Gauge.</em>
 </p>
 
 ---
@@ -29,15 +22,14 @@
 
 ## Overview
 
-The **NX-Edge** is an ultra-dense, agile embedded development platform engineered to bridge the gap between high-speed benchtop prototyping and space-constrained, high-vibration interactive builds (tactical gear, robotics, custom sabers, wearable tech, and modular IoT nodes).
+The **NX-Edge** is an embedded development board based on the ESP32-S3, built in an M.2 2260 form factor. It integrates power management, audio amplification, 9-DOF motion tracking, RTC, and microSD storage onto a single board, designed to interface with custom carrier boards via an M.2 Key B connector or edge breakout headers.
 
-Built on an advanced **6-layer high-density PCB** with **100% single-sided component placement** (zero components on the bottom layer), the NX-Edge delivers a **hybrid mechanical and electrical architecture**:
+Built on a **6-layer PCB** with **100% single-sided component placement** (zero components on the bottom layer):
 
-1. **Target Form Factor — The M.2 2260 ($22 \times 60\text{ mm}$) Blade:** Through methodical component packing and 6-layer stripline routing, the entire active hardware suite—including the 4-bit MicroSD card slot, BNO085 9-DOF IMU, RTC, and MAX98357A audio amplifier—fits completely within the ultra-compact **$60\text{ mm}$ envelope**.
-2. **2280 Layout Continuity:** The full **M.2 2280 ($22 \times 80\text{ mm}$)** geometry is retained in schematics and board design as an optional long-tail profile for applications requiring additional thermal copper heatsinking or mechanical backplane rail guides.
-3. **The Modular Cartridge:** Standard **M.2 Key B edge connector** (up to 75 pins) allowing the board to slide directly into low-profile carrier boards, custom backplanes, or modular hilt sleds.
-4. **The Castellated Prototyping Companion:** Dual perimeter rows of **castellated edge holes and solder pads** allow the board to be used directly on breadboards with pin headers, wired via fly-leads, or soldered flat as a surface-mount System-on-Module (SoM) onto carrier PCBs without requiring an M.2 socket.
-5. **Zero-Z Flat Bottom:** Because all active ICs, passives, and connectors are strictly top-mounted, the bottom is flat copper and solder mask—allowing it to be mounted flush against aluminum chassis, heatsinks, 3D prints, or battery packs using thermal tape without risk of short circuits.
+* **M.2 2260 Form Factor ($22 \times 60\text{ mm}$):** Fits the ESP32-S3 and all peripherals within the 60 mm board length.
+* **M.2 Key B Edge Connector (75 pins):** Custom pinout routing power, audio, I2C, UART, SDMMC, and all free GPIOs to carrier boards.
+* **Edge Breakouts (2.54 mm pitch):** 15 edge breakout holes for bench testing and wiring. The left side breaks out logic/power/I2C/UART, and the right side breaks out NeoPixel and speaker outputs.
+* **Flat Bottom Surface:** 100% single-sided top assembly with zero components on the bottom, leaving the back flat for low-profile mounting.
 
 > [!IMPORTANT]
 > **NX Custom Maker Interconnect (Non-PC Hardware):**  
@@ -59,28 +51,30 @@ Built on an advanced **6-layer high-density PCB** with **100% single-sided compo
 | **Fuel Gauge** | **Routed** | Maxim `MAX17048` ModelGauge™ I2C fuel gauge (`0x36`) for cell voltage ($V_{CELL}$) and SoC% without IR drop. |
 | **NeoPixel Driver** | **Routed** | P-FET `Q2` (DMP3130L-7) + NPN `Q3` (BC847W) on `IO12` with 3 castellated pads (`VN`, `NPD_IN`, `GND`) for high-power strips. |
 | **Onboard Indicators**| **Routed** | Onboard RGB NeoPixel (WS2812B/SK6812) powered from `VN` + User LED (LED13 / `D3`) with resistor `R13`. |
-| **6-Layer Stackup** | **Configured**| Upgraded from 4-layer to high-density 6-layer with 0.45 mm / 0.25 mm micro-vias for optimal signal integrity. |
+| **6-Layer Stackup** | **Routed** | 6-layer stackup with 0.45 mm / 0.25 mm standard through-hole vias for clean signal integrity. |
 | **MicroSD Slot** | **Routed** | Molex 105162 push-pull slot running in native **4-bit hardware SDMMC** mode via dedicated internal stripline bus. |
-| **Motion Sensor** | **Placed** | CEVA / Hillcrest Labs `BNO085` 9-DOF IMU with dedicated 32.768 kHz quartz crystal and sensor-fusion engine. |
-| **Audio Amplifier** | **Placed** | Maxim `MAX98357A` I2S Class-D mono amplifier delivering up to 3.2W into 4Ω directly from `VIN`. |
-| **RTC Subsystem** | **Placed** | Micro Crystal `RV-3028-C7` extreme low-power ($45\,\text{nA}$) real-time clock with backup capacitor. |
+| **Motion Sensor** | **Routed** | CEVA / Hillcrest Labs `BNO085` 9-DOF IMU with dedicated 32.768 kHz quartz crystal and sensor-fusion engine. |
+| **Audio Amplifier** | **Routed** | Maxim `MAX98357A` I2S Class-D mono amplifier delivering up to 3.2W into 4Ω directly from `VIN` (Bridge-Tied Load speaker output). |
+| **RTC Subsystem** | **Routed** | Micro Crystal `RV-3028-C7` extreme low-power ($45\,\text{nA}$) real-time clock with backup capacitor. |
+| **Hardware Buttons** | **Routed** | Dual Alps `SKTAAAE010` ($0.53\text{ mm}$ height) tactile buttons for **BOOT** (`IO0`) and **RST** with hardware Power-On-Reset (POR) delay circuit. |
+| **Routing & DRC** | **100% Complete** | 100% routed on all 6 layers using **standard through-hole vias only** (0 blind, 0 buried) with **0 DRC violations**. |
 
 ---
 
-## 6-Layer High-Density Stackup Architecture
+## 6-Layer Stackup Architecture
 
-To ensure pristine signal integrity, zero electromagnetic interference (EMI) between the 2.4 GHz RF stage and high-speed digital buses, and effortless escape routing for QFN/WSON packages, the NX-Edge employs an industrial **6-layer symmetrical stackup**:
+To ensure signal integrity and separate the 2.4 GHz RF stage from digital signal buses, the NX-Edge uses a **6-layer symmetrical stackup**:
 
 | Layer | KiCad Layer | Type | Copper Role & Signal Integrity Function |
 | :---: | :---: | :---: | :--- |
 | **L1** | `F.Cu` | Mixed / Top | Component mounting, 2.4 GHz RF transmission line, localized power pours (`VIN`, `+3V3`, `VBAT`). |
-| **L2** | `In1.Cu` | Plane | **Solid Ground Plane (GND):** Uninterrupted return path and Faraday shield directly below Top layer. |
-| **L3** | `In2.Cu` | Stripline Sig | **High-Speed Signal Highway:** Fully shielded internal striplines for **USB D+/D-**, **Flash Quad-SPI**, and **SDMMC**. |
+| **L2** | `In1.Cu` | Plane | **Solid Ground Plane (GND):** Return path and shield directly below Top layer. |
+| **L3** | `In2.Cu` | Stripline Sig | **Internal Signals:** Shielded striplines for **USB D+/D-**, **Flash Quad-SPI**, and **SDMMC**. |
 | **L4** | `In3.Cu` | Power Plane | **Power Plane Mosaic:** Low-impedance internal distribution for `+3V3`, `VBUS`, and `VBAT`. |
 | **L5** | `In4.Cu` | Plane | **Secondary Solid Ground Plane (GND):** Complete ground shield referencing Bottom layer. |
 | **L6** | `B.Cu` | Mixed / Bottom | Non-critical escape routing, switched `VN` power plane, M.2 docking fingers, and edge test pads. |
 
-* **Via Geometry:** Optimized to **0.45 mm pad diameter / 0.25 mm drill hole** (0.1 mm annular ring), shrinking via area by ~45% compared to standard 0.6/0.3 mm vias and allowing traces to slip between pins without DRC bottlenecks.
+* **Via Geometry & Cost Efficiency:** Optimized to **0.45 mm pad diameter / 0.25 mm drill hole** (0.1 mm annular ring). The entire board is routed using **standard through-hole vias only** (0 blind, 0 buried, and 0 laser micro-vias), keeping prototype fabrication compatible with standard, low-cost fab pools.
 
 ---
 
@@ -89,7 +83,7 @@ To ensure pristine signal integrity, zero electromagnetic interference (EMI) bet
 The NX-Edge implements an autonomous, low-loss **Power-Path management architecture**:
 
 ```text
-  USB-C (VBUS 5V) ──► [Schottky D2] ─────────┐
+  USB-C (VBUS 5V) ──► [Schottky D2] ──────────┐
                                               │
   LiPo (VBAT) ────► [Hard-Cut JP2] ──► [Q1] ──┴─► [ VIN ] (Automatic System Rail)
                                         ▲           │
@@ -113,16 +107,16 @@ The NX-Edge implements an autonomous, low-loss **Power-Path management architect
    * Standalone linear charger powered from `VBUS` configured for $600\text{–}800\text{ mA}$ charging with NTC thermistor input.
    * **Decoupled Charging:** Because the system and external LEDs run from `VIN`, charging current is never hijacked by system load.
 4. **ModelGauge™ Fuel Gauge (`MAX17048`):**
-   * Precision I2C fuel gauge (`0x36`) monitoring cell voltage directly at the battery connector. Reports cell voltage ($V_{CELL}$ in mV), State of Charge (SOC %), and rate of change over I2C without burning ADC channels or suffering from trace IR-drop.
+   * Precision I2C fuel gauge (`0x36`) monitoring cell voltage directly at the battery connector. Reports cell voltage ($V_{CELL}$ in mV), State of Charge (SOC %), and rate of change over I2C without needing external ADC dividers.
 5. **Smart NeoPixel Power-Cut (`VN`):**
    * High-side P-MOSFET `Q2` driven by NPN BJT `Q3` controlled via **GPIO12 (`CTRL_NP`)**.
-   * In Standby/Deep Sleep (`CTRL_NP = LOW`), power to both onboard and external NeoPixels is cut to $0.0\text{V}$, eliminating the $\sim 1\text{ mA}$ per-pixel quiescent vampire draw ($0.0\,\mu\text{A}$ standby).
+   * In Standby/Deep Sleep (`CTRL_NP = LOW`), power to both onboard and external NeoPixels is cut to $0.0\text{V}$, eliminating quiescent current draw.
 
 ---
 
-## RF Agility & Dual-Antenna Switching
+## RF Front-End & Antenna Switch
 
-* **RF Switch:** Infineon **`BGS12WN6`** ultra-miniature ($0.7 \times 1.1\text{ mm}$) SPDT RF switch rated up to $6\text{ GHz}$ with $<0.3\text{ dB}$ insertion loss.
+* **RF Switch:** Infineon **`BGS12WN6`** SPDT switch ($0.7 \times 1.1\text{ mm}$) rated up to $6\text{ GHz}$ with $<0.3\text{ dB}$ insertion loss.
 * **Control:** Controlled via **`RF_CTRL`**:
   * **Low (Default):** On-board high-efficiency **Ignion NN02-201** ceramic chip antenna.
   * **High:** Micro-coaxial **Hirose U.FL / IPEX** receptacle for external antenna routing out of metal, carbon fiber, or shielded enclosures.
@@ -131,18 +125,20 @@ The NX-Edge implements an autonomous, low-loss **Power-Path management architect
 
 ## Mechanical Specifications
 
-* **Form Factor Standard:** Dual-compatible envelope:
-  * **Primary Target:** M.2 2260 ($22.0\text{ mm} \times 60.0\text{ mm}$) ultra-dense blade.
-  * **Extended Profile:** M.2 2280 ($22.0\text{ mm} \times 80.0\text{ mm}$) for additional copper heatsinking and rail sleds.
+* **Form Factor:** M.2 2260 ($22.0\text{ mm} \times 60.0\text{ mm}$).
 * **Connector Type:** M.2 Key B card edge (up to 75 pins).
 * **PCB Thickness:** Standard $1.6\text{ mm}$ (or $0.8\text{ mm}$ option for slimline M.2 sockets).
 * **Component Clearance:** 100% single-sided top placement. Completely flat bottom surface (Zero-Z).
-* **Prototyping Headers:** Dual-edge castellated pin holes and solder pads for breadboards and surface mounting.
+* **Edge Breakouts (2.54 mm pitch):** 15 edge breakout holes:
+  * **Left Edge (Logic/Power):** `J9` (6-pin: `3V3`, `GND`, `RST`, `IO0`, `IO1`, `IO11`) and `J5` (4-pin: `IO8`/SDA, `IO9`/SCL, `RX`, `TX`).
+  * **Right Edge (Power/Audio):** `J7` (3-pin: NeoPixel `VN`, `NPD_IN`, `GND`) and `J2` (2-pin: Speaker `Audio+`, `Audio-`).
+  * *Breadboard & Prototyping Note:* While each individual rail uses standard 2.54 mm pitch and both sides align at the exact same height, the $22.0\text{ mm}$ board width is dictated by the M.2 standard and does not fall on a 2.54 mm grid ($22\text{ mm} \approx 8.66\text{ pitches}$). Vertical pin headers populated on both edges simultaneously will not span a single breadboard across the center ravine.  
+    **Recommendation:** Solder pin headers to the IO/logic side (`J9`/`J5`) to plug into a breadboard. For the power/output side (`J7` NeoPixel and `J2` Audio), direct wire soldering or fly-leads are recommended anyway for power delivery and signal integrity—or simply leave them unpopulated if not needed.
 
 ---
 
-## License & Ownership
+## License & Credits
 
 * **Hardware Design:** Licensed under the [CERN Open Hardware Licence Version 2 - Strongly Reciprocal (CERN-OHL-S)](https://ohwr.org/cernohl).
-* **Firmware / BSP:** Licensed under the [GNU General Public License v3.0 (GPLv3)](https://www.gnu.org/licenses/gpl-3.0.en.html).
-* **Engineering & Ownership:** Conceptualized, engineered, and maintained by [@Ghost3379](https://github.com/Ghost3379).
+* **Engineering & Ownership:** Conceptualized, engineered, schematics, PCB layout, and testing by [@Ghost3379](https://github.com/Ghost3379).
+* **Tooling & AI Transparency:** Antigravity IDE (Gemini 3.8) was used for brainstorming and documentation assistance. All hardware architecture, schematics, routing, and layout decisions are 100% human-designed and verified.
