@@ -5,5 +5,5 @@ SW:
 HW:
 [ ] Redo manual
 [ ] Silkscreen deisgn
-[ ] EN ¬ RST button e.g. Alps SKTAAAE010
+[x] EN ¬ RST button e.g. Alps SKTAAAE010
 [x] RST RC circuit

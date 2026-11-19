@@ -4756,12 +4756,60 @@
 		(uuid "f84da78a-1ca6-42d2-a8d6-1c83679992aa")
 	)
 	(no_connect
+		(at 148.59 157.48)
+		(uuid "32354639-553a-48bf-a0b7-9c329a98f88e")
+	)
+	(no_connect
+		(at 148.59 165.1)
+		(uuid "491c7476-2c34-4f28-bf4a-9e8d0b1608bc")
+	)
+	(no_connect
+		(at 148.59 149.86)
+		(uuid "543e9d11-770d-4f69-a068-8afe7a60150f")
+	)
+	(no_connect
 		(at 44.45 64.77)
 		(uuid "547bb909-d96a-4094-b495-38a0194e67fb")
 	)
 	(no_connect
+		(at 148.59 147.32)
+		(uuid "55bf5adf-a123-4327-8b3c-7aa7a75ec3fa")
+	)
+	(no_connect
+		(at 148.59 152.4)
+		(uuid "67b96538-f523-452e-b4aa-cc6dc8c75f80")
+	)
+	(no_connect
+		(at 148.59 162.56)
+		(uuid "75f05e3d-bd27-42fc-9205-f158f6a2418a")
+	)
+	(no_connect
+		(at 148.59 144.78)
+		(uuid "83e08ad3-6569-4b8f-bd1f-0219b6d10066")
+	)
+	(no_connect
+		(at 148.59 160.02)
+		(uuid "9affb5b9-3e79-49e9-9266-bb2bbe7e664b")
+	)
+	(no_connect
 		(at 44.45 57.15)
 		(uuid "a7657c56-7a01-43ba-866a-9ce139dfb417")
+	)
+	(no_connect
+		(at 148.59 154.94)
+		(uuid "bd8b415b-e857-4423-bae8-8747df572349")
+	)
+	(no_connect
+		(at 148.59 139.7)
+		(uuid "d3023784-90e3-4360-9824-f4b460162899")
+	)
+	(no_connect
+		(at 148.59 167.64)
+		(uuid "f1ac78b7-3545-4305-8292-411ea31fb1a1")
+	)
+	(no_connect
+		(at 148.59 142.24)
+		(uuid "f89282b2-0f0c-493b-818a-e0682cbc66c6")
 	)
 	(wire
 		(pts
@@ -5045,7 +5093,7 @@
 	)
 	(wire
 		(pts
-			(xy 91.44 44.45) (xy 93.98 44.45)
+			(xy 36.83 127) (xy 39.37 127)
 		)
 		(stroke
 			(width 0)
@@ -5115,7 +5163,7 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 41.91) (xy 113.03 41.91)
+			(xy 49.53 124.46) (xy 58.42 124.46)
 		)
 		(stroke
 			(width 0)
@@ -5155,7 +5203,7 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 33.02) (xy 99.06 36.83)
+			(xy 44.45 115.57) (xy 44.45 119.38)
 		)
 		(stroke
 			(width 0)
@@ -5255,7 +5303,7 @@
 	)
 	(wire
 		(pts
-			(xy 104.14 44.45) (xy 113.03 44.45)
+			(xy 49.53 127) (xy 58.42 127)
 		)
 		(stroke
 			(width 0)
@@ -5305,7 +5353,7 @@
 	)
 	(wire
 		(pts
-			(xy 91.44 41.91) (xy 93.98 41.91)
+			(xy 36.83 124.46) (xy 39.37 124.46)
 		)
 		(stroke
 			(width 0)
@@ -5325,7 +5373,7 @@
 	)
 	(wire
 		(pts
-			(xy 99.06 49.53) (xy 99.06 50.8)
+			(xy 44.45 132.08) (xy 44.45 133.35)
 		)
 		(stroke
 			(width 0)
@@ -5364,7 +5412,7 @@
 		(uuid "ffa695e9-1198-4d6f-b0ac-4ae694637ce5")
 	)
 	(label "ESD SAFETY DIODES"
-		(at 76.2 25.4 0)
+		(at 21.59 107.95 0)
 		(effects
 			(font
 				(size 3.048 3.048)
@@ -5377,7 +5425,7 @@
 		(uuid "077a77b0-14e3-4594-9f58-4d10d443d7a4")
 	)
 	(label "U_D-"
-		(at 91.44 44.45 180)
+		(at 36.83 127 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5387,7 +5435,7 @@
 		(uuid "08697150-ade2-4068-95b4-51e84ad723d3")
 	)
 	(label "U_D+"
-		(at 91.44 41.91 180)
+		(at 36.83 124.46 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5681,7 +5729,7 @@
 	)
 	(hierarchical_label "D+"
 		(shape bidirectional)
-		(at 113.03 41.91 0)
+		(at 58.42 124.46 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -5815,7 +5863,7 @@
 	)
 	(hierarchical_label "D-"
 		(shape bidirectional)
-		(at 113.03 44.45 0)
+		(at 58.42 127 0)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -7897,7 +7945,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 99.06 50.8 0)
+		(at 44.45 133.35 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -7908,7 +7956,7 @@
 		(fields_autoplaced yes)
 		(uuid "aaf8854a-821a-419f-b57c-71c3b00f6586")
 		(property "Reference" "#PWR094"
-			(at 99.06 57.15 0)
+			(at 44.45 139.7 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7919,7 +7967,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 99.06 55.88 0)
+			(at 44.45 138.43 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -7929,7 +7977,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 99.06 50.8 0)
+			(at 44.45 133.35 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7940,7 +7988,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 99.06 50.8 0)
+			(at 44.45 133.35 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7951,7 +7999,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 99.06 50.8 0)
+			(at 44.45 133.35 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8388,7 +8436,7 @@
 	)
 	(symbol
 		(lib_id "power:VBUS")
-		(at 99.06 33.02 0)
+		(at 44.45 115.57 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8399,7 +8447,7 @@
 		(fields_autoplaced yes)
 		(uuid "c5fbb066-463a-492b-b9b0-eab76c4e5602")
 		(property "Reference" "#PWR091"
-			(at 99.06 36.83 0)
+			(at 44.45 119.38 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8410,7 +8458,7 @@
 			)
 		)
 		(property "Value" "VBUS"
-			(at 99.06 27.94 0)
+			(at 44.45 110.49 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8420,7 +8468,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 99.06 33.02 0)
+			(at 44.45 115.57 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8431,7 +8479,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 99.06 33.02 0)
+			(at 44.45 115.57 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8442,7 +8490,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"VBUS\""
-			(at 99.06 33.02 0)
+			(at 44.45 115.57 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8874,7 +8922,7 @@
 	)
 	(symbol
 		(lib_id "Power_Protection:USBLC6-2P6")
-		(at 99.06 41.91 0)
+		(at 44.45 124.46 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -8885,7 +8933,7 @@
 		(fields_autoplaced yes)
 		(uuid "f42ece88-7e78-4ded-b0cd-67ca0519d1c2")
 		(property "Reference" "U11"
-			(at 100.7111 34.29 0)
+			(at 46.1011 116.84 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8896,7 +8944,7 @@
 			)
 		)
 		(property "Value" "USBLC6-2P6"
-			(at 100.7111 36.83 0)
+			(at 46.1011 119.38 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -8907,7 +8955,7 @@
 			)
 		)
 		(property "Footprint" "Package_TO_SOT_SMD:SOT-666"
-			(at 100.076 48.641 0)
+			(at 45.466 131.191 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8920,7 +8968,7 @@
 			)
 		)
 		(property "Datasheet" "https://www.st.com/resource/en/datasheet/usblc6-2.pdf"
-			(at 100.076 50.546 0)
+			(at 45.466 133.096 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8932,7 +8980,7 @@
 			)
 		)
 		(property "Description" "Very low capacitance ESD protection diode, 2 data-line, SOT-666"
-			(at 99.06 41.91 0)
+			(at 44.45 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)

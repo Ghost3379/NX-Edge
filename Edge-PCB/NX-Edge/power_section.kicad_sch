@@ -3357,7 +3357,7 @@
 	)
 	(text "Formula R_ISET: 300/ I_OUT(in Amperes)\n\nCharge Current | Calculated R_ISET\n--------- | -------------\n50 mA	      |   6000 Ω\n100 mA         |   3000 Ω\n150 mA		 |   2000 Ω\n200 mA		 |   1500 Ω\n300 mA	      |   1000 Ω\n400 mA 	      |    750 Ω\n500 mA	      |    600 Ω\n600 mA	      |    500 Ω\n800 mA	      |    375 Ω"
 		(exclude_from_sim no)
-		(at 198.882 104.394 0)
+		(at 198.882 109.22 0)
 		(effects
 			(font
 				(size 1.27 1.27)
