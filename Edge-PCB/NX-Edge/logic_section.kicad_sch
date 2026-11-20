@@ -3924,6 +3924,18 @@
 		)
 	)
 	(rectangle
+		(start 66.04 96.393)
+		(end 90.17 101.473)
+		(stroke
+			(width 0)
+			(type solid)
+		)
+		(fill
+			(type none)
+		)
+		(uuid "55e9063f-e46b-4a18-ac40-ca17e9d1f1fc")
+	)
+	(rectangle
 		(start 133.223 19.05)
 		(end 164.973 38.1)
 		(stroke
@@ -3934,6 +3946,17 @@
 			(type none)
 		)
 		(uuid "bdf0ef53-0ef1-4853-8129-f1dc0a4803d2")
+	)
+	(text "L4 & C14\nUSED ONLY FOR TUNING"
+		(exclude_from_sim no)
+		(at 66.675 99.06 0)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify left)
+		)
+		(uuid "6cf2c7fc-744b-4db4-9f0b-bdcd8640a57f")
 	)
 	(text "[0603]"
 		(exclude_from_sim no)
@@ -6165,7 +6188,7 @@
 				)
 			)
 		)
-		(property "Value" "TBA"
+		(property "Value" "1.5p"
 			(at 48.2663 60.96 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -6199,6 +6222,28 @@
 		)
 		(property "Description" "Unpolarized capacitor, small symbol"
 			(at 48.26 64.77 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Tolerance" "+-0.05pF"
+			(at 48.26 64.77 90)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer part number" ""
+			(at 48.26 64.77 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7014,7 +7059,7 @@
 				)
 			)
 		)
-		(property "Value" "TBA"
+		(property "Value" "1.8n"
 			(at 27.432 59.182 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -7047,6 +7092,28 @@
 			)
 		)
 		(property "Description" "Inductor"
+			(at 30.48 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Tolerances" "+-0.1nH"
+			(at 30.48 59.69 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer part number" ""
 			(at 30.48 59.69 0)
 			(hide yes)
 			(show_name no)
@@ -8567,7 +8634,7 @@
 				)
 			)
 		)
-		(property "Value" "TBA"
+		(property "Value" "2.7n"
 			(at 27.432 69.342 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -8610,6 +8677,28 @@
 				)
 			)
 		)
+		(property "Tolerances" "+-0.1nH"
+			(at 30.48 69.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer part number" ""
+			(at 30.48 69.85 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
 		(pin "2"
 			(uuid "3a9fe569-805d-4081-aa36-def982f48b2f")
 		)
@@ -8637,7 +8726,7 @@
 		(dnp no)
 		(uuid "9e5c0863-bd97-4cfa-8426-b280875eb3ac")
 		(property "Reference" "C7"
-			(at 193.294 45.72 90)
+			(at 193.548 42.164 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -9447,10 +9536,10 @@
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
-		(in_bom yes)
+		(in_bom no)
 		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
+		(in_pos_files no)
+		(dnp yes)
 		(fields_autoplaced yes)
 		(uuid "be823b3b-9706-4748-be4f-b19d15e0e825")
 		(property "Reference" "C14"
@@ -9464,7 +9553,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "TBA"
+		(property "Value" "DNP"
 			(at 101.6 85.0962 0)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9860,7 +9949,7 @@
 				)
 			)
 		)
-		(property "Value" "TBA"
+		(property "Value" "0"
 			(at 113.0111 82.804 90)
 			(show_name no)
 			(do_not_autoplace no)
@@ -9892,8 +9981,19 @@
 				)
 			)
 		)
-		(property "Description" "Inductor"
+		(property "Description" "Inductor, USED ONLY TO TUNE 2ND HARMONIC"
 			(at 113.0111 80.01 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer part number" ""
+			(at 113.0111 80.01 90)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -10245,7 +10345,7 @@
 		(dnp no)
 		(uuid "f0470790-80bf-47ec-a320-74a69a01ff92")
 		(property "Reference" "C8"
-			(at 202.184 46.228 90)
+			(at 202.438 42.418 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -10256,7 +10356,7 @@
 			)
 		)
 		(property "Value" "100n"
-			(at 209.296 46.482 90)
+			(at 200.152 46.99 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects

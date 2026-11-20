@@ -6,17 +6,25 @@
 ---
 
 <p align="center">
-  <img src="docs/pictures/NX-Edge_header-reference.jpg" alt="NX-Edge M.2 2260 3D Top View" width="55%">
+  <img src="docs/pictures/NX-Edge_v1p0_Top.png" alt="NX-Edge M.2 2260 16K 3D Top View" width="70%">
 </p>
 <p align="center">
-  <em>NX-Edge M.2 2260 3D Render — Single-sided top placement with 45° ESP32-S3, QSPI Flash, BNO085 IMU, RV-3028 RTC, MAX98357A Audio Amp, MicroSD slot, LiPo Charger & Fuel Gauge.</em>
+  <em>NX-Edge Top View — 100% single-sided top assembly with 45° ESP32-S3, QSPI Flash, BNO085 IMU, RV-3028 RTC, MAX98357A Audio Amp, MicroSD slot, LiPo Charger & Fuel Gauge.</em>
+</p>
+
+<p align="center">
+  <img src="docs/pictures/NX-Edge_v1p0_Bottom.png" alt="NX-Edge M.2 2260 16K 3D Bottom View" width="70%">
+</p>
+<p align="center">
+  <em>NX-Edge Bottom View — Flat single-sided surface with M.2 Key B docking fingers, NO NVME warning, IMU coordinate triad, cut-safe jumpers [SW] & [LED], and GAIN test pad.</em>
 </p>
 
 ---
 
 > [!TIP]
-> 📖 **Hardware Reference Manual Available:**  
-> Detailed component pinouts, I2C register maps, power-path precautions, Arduino code snippets, and RTC trickle-charge configuration are fully documented in the **[NX-Edge Hardware Reference Manual](docs/HARDWARE_MANUAL.md)**.
+> 📖 **Technical Documentation Available:**  
+> * **[NX-Edge Hardware Reference Manual](docs/HARDWARE_MANUAL.md):** Detailed pinouts, subsystem floorplan, I2C register maps, power-path precautions, and quickstart code.
+> * **[NX-Edge RF Design Guide](docs/RF_DESIGN_GUIDE.md):** 2.4 GHz transmission line impedance derivations ($Z_0 = 51.44\,\Omega$), stackup equations, and matching network BOM values.
 
 ---
 
@@ -117,18 +125,26 @@ The NX-Edge implements an autonomous, low-loss **Power-Path management architect
 ## RF Front-End & Antenna Switch
 
 * **RF Switch:** Infineon **`BGS12WN6`** SPDT switch ($0.7 \times 1.1\text{ mm}$) rated up to $6\text{ GHz}$ with $<0.3\text{ dB}$ insertion loss.
-* **Control:** Controlled via **`RF_CTRL`**:
-  * **Low (Default):** On-board high-efficiency **Ignion NN02-201** ceramic chip antenna.
+* **50Ω Transmission Lines:** All RF lines routed on `F.Cu` with $W = 0.150\,\text{mm}$ over $0.100\,\text{mm}$ prepreg ($Z_0 = 51.44\,\Omega$, $\text{VSWR} = 1.028:1$). See the **[RF Design Guide](docs/RF_DESIGN_GUIDE.md)** for detailed math and matching BOM values.
+* **Control:** Controlled via **`RF_CTRL`** (`GPIO10`):
+  * **Low (Default):** On-board high-efficiency **Ignion NN02-201** ceramic chip antenna with 50Ω lumped matching network (`C13`, `L3`, `L2`).
   * **High:** Micro-coaxial **Hirose U.FL / IPEX** receptacle for external antenna routing out of metal, carbon fiber, or shielded enclosures.
 
 ---
 
 ## Mechanical Specifications
 
-* **Form Factor:** M.2 2260 ($22.0\text{ mm} \times 60.0\text{ mm}$).
-* **Connector Type:** M.2 Key B card edge (up to 75 pins).
-* **PCB Thickness:** Standard $1.6\text{ mm}$ (or $0.8\text{ mm}$ option for slimline M.2 sockets).
-* **Component Clearance:** 100% single-sided top placement. Completely flat bottom surface (Zero-Z).
+* **Form Factor:** M.2 2260 Key B ($22.0\text{ mm} \times 60.0\text{ mm}$).
+* **Connector Type:** 75-pin M.2 Key B card edge connector.
+* **PCB Thickness:** **$0.80\,\text{mm} \pm 10\%$** ($0.8\text{ mm}$ finished thickness, compliant with the official PCI-SIG M.2 Card Electromechanical Specification).
+* **Component Clearance:** 100% single-sided top placement. Completely flat bottom surface (Zero-Z) for ultra-low-profile carrier mounting.
+* **Silkscreen & Hardware Annotations:**
+  * **`NO NVME`** boxed warning over bottom gold fingers to prevent accidental insertion into standard PC motherboard slots.
+  * Dual-purpose **`B ▽`** marker designating both `SW2` (BOOT) and the mechanical Key B notch.
+  * **`[ SW ]`** (`JP2`) and **`[ LED ]`** (`JP1`) boxed cut-jumpers with internal copper keepouts beneath the cut bridge.
+  * **`G`** silkscreen marking audio GAIN test point `TP1`.
+  * IMU 3-axis coordinate triad ($X, Y, Z$) and chip boundary outline.
+  * MicroSD card insertion icon with contact orientation.
 * **Edge Breakouts (2.54 mm pitch):** 15 edge breakout holes:
   * **Left Edge (Logic/Power):** `J9` (6-pin: `3V3`, `GND`, `RST`, `IO0`, `IO1`, `IO11`) and `J5` (4-pin: `IO8`/SDA, `IO9`/SCL, `RX`, `TX`).
   * **Right Edge (Power/Audio):** `J7` (3-pin: NeoPixel `VN`, `NPD_IN`, `GND`) and `J2` (2-pin: Speaker `Audio+`, `Audio-`).

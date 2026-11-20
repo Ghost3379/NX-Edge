@@ -31,7 +31,7 @@
 All active ICs, connectors, and passives are populated on the **Top layer (`F.Cu`)**. The bottom is flat copper and solder mask with zero SMD components.
 
 <p align="center">
-  <img src="pictures/NX-Edge_header-reference.jpg" alt="NX-Edge Top-Down 3D Render" width="60%">
+  <img src="pictures/NX-Edge_v1p0_Top.png" alt="NX-Edge Top-Down 3D Render" width="70%">
 </p>
 <p align="center">
   <em>NX-Edge Top-Down 3D View — M.2 2260 Key B form factor with single-sided top assembly.</em>
@@ -39,27 +39,12 @@ All active ICs, connectors, and passives are populated on the **Top layer (`F.Cu
 
 ### Subsystem Block Overview
 
-```text
- ┌────────────────────────────────────────────────────────────────────────┐
- │                              [ USB-C ]                                 │
- │  [Chip Ant]  [U.FL]  [RF Switch]                     [Ignion Antenna]  │
- │                                                                        │
- │              [ ESP32-S3 ]        [Winbond 16MB Flash]                  │
- │             ( bare QFN-56 )          ( WSON-8 )                        │
- │                                                                        │
- │  [J9 Logic]  [ BNO085 IMU ]      [ TI TLV62569 Buck (3.3V @ 2A) ]      │
- │  (6-pin THT) [ 32.768k XTAL]     [ BQ25170 LiPo Charger (800mA) ]      │
- │                                                                        │
- │  [J5 Serial] [ RV-3028 RTC ]     [ MAX17048 Fuel Gauge ]   [J7 NeoPix] │
- │  (4-pin THT) [ C34 Supercap]     [ Q2/Q3 NeoPixel Switch]  (3-pin THT) │
- │                                                                        │
- │              [ MicroSD Slot ]    [ MAX98357A Audio Amp ]   [J2 Audio]  │
- │              ( Molex 105162 )        ( 3.2W BTL Mono )     (2-pin THT) │
- │                                                                        │
- │                  [SW1: RST]        [SW2: BOOT (IO0)]                   │
- │                     └───────[ M.2 Key B ]───────┘                      │
- └────────────────────────────────────────────────────────────────────────┘
-```
+<p align="center">
+  <img src="pictures/NX-Edge_subsystem_layout.png" alt="NX-Edge Subsystem Floorplan Map" width="85%">
+</p>
+<p align="center">
+  <em>NX-Edge Component Floorplan — Functional hardware subsystems and IC locations on the single-sided top assembly.</em>
+</p>
 
 ---
 
@@ -212,6 +197,8 @@ Infineon SPDT RF switch rated up to 6 GHz with $<0.3\,\text{dB}$ insertion loss.
 | :---: | :--- | :--- |
 | **`LOW` (Default)** | **Ignion NN02-201 Ceramic Antenna** | Compact builds without external antennas. |
 | **`HIGH`** | **Hirose U.FL Receptacle** | Enclosed in metal, carbon fiber, or shielded chassis. |
+
+For transmission line impedance calculations ($Z_0 = 51.44\,\Omega$), stackup equations, and matching network BOM values (`L2`, `L3`, `C13`, `L4`, `C14`), see the [RF Design Guide](RF_DESIGN_GUIDE.md).
 
 ---
 
