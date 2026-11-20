@@ -46,7 +46,7 @@ Built on a **6-layer PCB** with **100% single-sided component placement** (zero 
 | **RF Front-End** | **Routed** | Ignion `NN02-201` ceramic antenna + Hirose U.FL receptacle + Infineon `BGS12WN6` SPDT RF switch (`RF_CTRL`). |
 | **USB Type-C** | **Routed** | Reversible Type-C receptacle, `USBLC6-2SC6` ESD array, dual $5.1\,\text{k}\Omega$ CC pulldowns (`R20`/`R21`), D+/D- internal stripline. |
 | **LiPo Charging** | **Routed** | TI `BQ25170` autonomous linear charger (600–800 mA), status LED, horizontal JST-PH 2.0mm connector (`P1`/`P2`). |
-| **True 0µA Standby** | **Routed** | Solder jumper & switch pad `JP2` between battery and system rail for an external physical power switch. |
+| **Battery Power Switch** | **Routed** | Solder jumper & switch pads `JP2` (`[ SW ]`) to wire a physical power toggle switch (must be ON to charge). |
 | **Buck Regulator** | **Routed** | TI `TLV62569` synchronous buck converter delivering continuous **3.3V @ 2.0A** with low ripple. |
 | **Fuel Gauge** | **Routed** | Maxim `MAX17048` ModelGauge™ I2C fuel gauge (`0x36`) for cell voltage ($V_{CELL}$) and SoC% without IR drop. |
 | **NeoPixel Driver** | **Routed** | P-FET `Q2` (DMP3130L-7) + NPN `Q3` (BC847W) on `IO12` with 3 castellated pads (`VN`, `NPD_IN`, `GND`) for high-power strips. |
@@ -57,7 +57,7 @@ Built on a **6-layer PCB** with **100% single-sided component placement** (zero 
 | **Audio Amplifier** | **Routed** | Maxim `MAX98357A` I2S Class-D mono amplifier delivering up to 3.2W into 4Ω directly from `VIN` (Bridge-Tied Load speaker output). |
 | **RTC Subsystem** | **Routed** | Micro Crystal `RV-3028-C7` extreme low-power ($45\,\text{nA}$) real-time clock with backup capacitor. |
 | **Hardware Buttons** | **Routed** | Dual Alps `SKTAAAE010` ($0.53\text{ mm}$ height) tactile buttons for **BOOT** (`IO0`) and **RST** with hardware Power-On-Reset (POR) delay circuit. |
-| **Routing & DRC** | **100% Complete** | 100% routed on all 6 layers using **standard through-hole vias only** (0 blind, 0 buried) with **0 DRC violations**. |
+| **Routing Status** | **100% Complete** | 100% routed on all 6 layers using **standard through-hole vias only** (0 blind, 0 buried). |
 
 ---
 

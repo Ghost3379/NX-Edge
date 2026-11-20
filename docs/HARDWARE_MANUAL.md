@@ -87,10 +87,12 @@ The NX-Edge features an autonomous, low-loss **Power-Path management circuit**:
 * **USB Connected:** $V_{BUS}$ holds the P-FET gate high, fully isolating the battery from discharge. $V_{IN}$ runs directly on USB power ($\approx 4.8\text{–}5.0\text{V}$).
 * **Battery Only:** When USB is disconnected, a gate pull-down immediately turns on P-FET `Q1` ($R_{DS(on)} \approx 30\,\text{m}\Omega$). $V_{IN}$ runs directly from the battery with negligible voltage drop.
 
-### 2. Physical Power Switch Jumper (`JP2`)
-Located between the JST-PH battery connector and internal `VBAT` net:
-* **Default:** Solder-bridged. Battery connects to the power path.
-* **External Switch Mode:** Cut the copper trace between the pads and wire an external mechanical toggle/slide switch across `JP2`. This cuts the battery physically for **true $0.0\,\mu\text{A}$ zero-drain standby**.
+### 2. Solder Jumpers & Cut-Safe Zones (`JP1` & `JP2`)
+Both configurable solder jumpers are labeled on the bottom silkscreen and designed with **internal layer keepouts** directly beneath the bridge gap—so cutting the trace with a blade will not damage any buried inner-layer traces:
+* **`[ SW ]` Main Battery Power Switch (`JP2`):** Located between the JST-PH battery connector and the internal `VBAT` rail. Default is bridged. Cut the copper trace and wire an external toggle or slide switch to act as a true physical power switch.  
+  > [!IMPORTANT]  
+  > Because `JP2` physically disconnects the battery from the board, **this switch must be ON (closed) to charge the LiPo battery** over USB. If the switch is OFF, the battery is completely isolated from the charger.
+* **`[ LED ]` Charge LED Cut (`JP1`):** In series with the TI BQ25170 charging indicator LED. Default is bridged. Cut this trace to permanently disable the charging indicator LED.
 
 ### 3. Smart NeoPixel Power-Cut (`VN`)
 WS2812B/SK6812 LEDs draw $\sim 1\,\text{mA}$ per pixel even when displaying pure black. To prevent battery drain in sleep modes:
@@ -119,7 +121,7 @@ Mono Class-D amplifier delivering up to **3.2W into 4Ω** (or 1.8W into 8Ω) dir
 > Connecting these pins to a standard 3.5 mm Aux jack (where the sleeve connects to system GND) will dead-short the amplifier's negative leg to ground, destroying the amplifier or headphones. For headphones or line-out, tap the digital I2S pins on carrier boards to feed an external stereo DAC.
 
 #### Hardware Gain Test Point (`TP1`)
-The GAIN pin connects to test point **`TP1`** (located near U9):
+The GAIN pin connects to test point **`TP1`** (clearly labeled with a **`G`** on the bottom silkscreen):
 
 | Desired Gain | Hardware Configuration on `TP1` |
 | :---: | :--- |

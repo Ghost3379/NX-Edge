@@ -3,7 +3,7 @@ SW:
 [ ] Arduino libary 
 
 HW:
-[ ] Silkscreen deisgn
+[x] Silkscreen deisgn
 [x] EN ¬ RST button e.g. Alps SKTAAAE010
 [x] RST RC circuit
 
