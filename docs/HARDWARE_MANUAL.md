@@ -256,15 +256,15 @@ Standard M.2 Key B form factor.
 | **25** | FRONT | `GND` | Power | Ground Return |
 | **26** | BACK | `VIN` | Power | Automatic System Power Rail (~3.7–5.0V) |
 | **27** | FRONT | `GND` | Power | Ground Return |
-| **28** | BACK | `NC` | — | Unconnected |
+| **28** | BACK | `GND` | Power | Ground Return (Dedicated Ground Block) |
 | **29** | FRONT | `GND` | Power | Ground Return |
-| **30** | BACK | `NC` | — | Unconnected |
+| **30** | BACK | `GND` | Power | Ground Return (Dedicated Ground Block) |
 | **31** | FRONT | `VBAT` | Power | Raw LiPo Battery Terminal Rail (1S 3.7–4.2V) |
-| **32** | BACK | `NC` | — | Unconnected |
+| **32** | BACK | `GND` | Power | Ground Return (Dedicated Ground Block) |
 | **33** | FRONT | `VBAT` | Power | Raw LiPo Battery Terminal Rail (1S 3.7–4.2V) |
-| **34** | BACK | `NC` | — | Unconnected |
+| **34** | BACK | `GND` | Power | Ground Return (Dedicated Ground Block) |
 | **35** | FRONT | `VBAT` | Power | Raw LiPo Battery Terminal Rail (1S 3.7–4.2V) |
-| **36** | BACK | `NC` | — | Unconnected |
+| **36** | BACK | `GND` | Power | Ground Return (Dedicated Ground Block) |
 | **37** | FRONT | `VBAT` | Power | Raw LiPo Battery Terminal Rail (1S 3.7–4.2V) |
 | **38** | BACK | `IO37` | I/O | **Dedicated GPIO37** |
 | **39** | FRONT | `GND` | Power | Ground Return |
